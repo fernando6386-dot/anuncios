@@ -11,7 +11,7 @@
     --bg: #0a0a0f; --surface: #12121a; --surface2: #1a1a26; --border: #2a2a3d;
     --accent: #e63946; --accent2: #ff6b35; --gold: #f4a261;
     --text: #f0f0f5; --text2: #9090b0; --text3: #5a5a7a;
-    --green: #2ecc71; --yellow: #f39c12; --radius: 10px;
+    --green: #2ecc71; --yellow: #f39c12; --blue: #3498db; --purple: #9b59b6; --radius: 10px;
   }
   body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
   .header {
@@ -20,42 +20,43 @@
     height: 60px; position: sticky; top: 0; z-index: 100;
   }
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; }
-  .logo-icon {
-    width: 32px; height: 32px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px;
-  }
+  .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
   .logo span { color: var(--accent); }
-  .badge-hoje {
-    background: rgba(230,57,70,0.15); border: 1px solid rgba(230,57,70,0.3);
-    color: var(--accent); padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;
-  }
-  .nav-tabs {
-    display: flex; gap: 4px; padding: 16px 24px 0;
-    border-bottom: 1px solid var(--border); background: var(--surface);
-  }
-  .tab {
-    padding: 8px 16px; border-radius: 8px 8px 0 0; font-size: 13px; font-weight: 500;
-    color: var(--text2); cursor: pointer; border: 1px solid transparent;
-    border-bottom: none; transition: all 0.2s; background: transparent; font-family: 'Inter', sans-serif;
-  }
+  .badge-hoje { background: rgba(230,57,70,0.15); border: 1px solid rgba(230,57,70,0.3); color: var(--accent); padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .nav-tabs { display: flex; gap: 4px; padding: 16px 24px 0; border-bottom: 1px solid var(--border); background: var(--surface); overflow-x: auto; }
+  .tab { padding: 8px 16px; border-radius: 8px 8px 0 0; font-size: 13px; font-weight: 500; color: var(--text2); cursor: pointer; border: 1px solid transparent; border-bottom: none; transition: all 0.2s; background: transparent; font-family: 'Inter', sans-serif; white-space: nowrap; }
   .tab:hover { color: var(--text); }
   .tab.active { background: var(--bg); color: var(--text); border-color: var(--border); border-bottom-color: var(--bg); }
-  .main { padding: 24px; max-width: 900px; margin: 0 auto; }
-  .summary-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .main { padding: 24px; max-width: 960px; margin: 0 auto; }
+
+  /* CARDS */
+  .summary-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 24px; }
   .summary-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
   .summary-card .label { font-size: 11px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-  .summary-card .value { font-size: 28px; font-weight: 700; line-height: 1; }
+  .summary-card .value { font-size: 26px; font-weight: 700; line-height: 1; }
   .summary-card .sub { font-size: 11px; color: var(--text2); margin-top: 4px; }
-  .card-ativos .value { color: var(--green); }
-  .card-hoje .value { color: var(--gold); }
   .card-total .value { color: var(--text); }
-  .card-apagar .value { color: var(--accent); }
+  .card-disponivel .value { color: var(--green); }
+  .card-reservado .value { color: var(--yellow); }
+  .card-vendido .value { color: var(--blue); }
+  .card-publicados .value { color: var(--gold); }
+
+  /* FILTROS */
+  .filtros { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filtro-btn { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text2); font-family: 'Inter', sans-serif; transition: all 0.2s; }
+  .filtro-btn:hover, .filtro-btn.active { background: var(--surface2); color: var(--text); border-color: var(--text2); }
+  .filtro-btn.f-disponivel.active { border-color: var(--green); color: var(--green); background: rgba(46,204,113,0.1); }
+  .filtro-btn.f-reservado.active { border-color: var(--yellow); color: var(--yellow); background: rgba(243,156,18,0.1); }
+  .filtro-btn.f-vendido.active { border-color: var(--blue); color: var(--blue); background: rgba(52,152,219,0.1); }
+
+  /* PAINEL */
   .daily-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
-  .panel-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .panel-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
   .panel-header h2 { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
   .dot-live { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  /* BOTÕES */
   .btn { padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; font-family: 'Inter', sans-serif; }
   .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; }
   .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
@@ -63,32 +64,47 @@
   .btn-outline:hover { border-color: var(--text2); color: var(--text); }
   .btn-green { background: rgba(46,204,113,0.15); border: 1px solid rgba(46,204,113,0.3); color: var(--green); }
   .btn-green:hover { background: rgba(46,204,113,0.25); }
+
+  /* LISTA */
   .ad-list { padding: 0; }
-  .ad-item { display: flex; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--border); gap: 12px; transition: background 0.15s; }
+  .ad-item { padding: 14px 20px; border-bottom: 1px solid var(--border); transition: background 0.15s; }
   .ad-item:last-child { border-bottom: none; }
   .ad-item:hover { background: rgba(255,255,255,0.02); }
-  .ad-status { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .status-ativo { background: var(--green); box-shadow: 0 0 6px rgba(46,204,113,0.5); }
-  .status-pendente { background: var(--yellow); }
+  .ad-item-row { display: flex; align-items: center; gap: 12px; }
+  .ad-status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot-disponivel { background: var(--green); box-shadow: 0 0 6px rgba(46,204,113,0.5); }
+  .dot-reservado { background: var(--yellow); box-shadow: 0 0 6px rgba(243,156,18,0.5); }
+  .dot-vendido { background: var(--blue); box-shadow: 0 0 6px rgba(52,152,219,0.5); }
   .ad-thumb { width: 48px; height: 36px; border-radius: 6px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; border: 1px solid var(--border); }
   .ad-info { flex: 1; min-width: 0; }
   .ad-title { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .ad-meta { display: flex; gap: 12px; margin-top: 2px; }
+  .ad-meta { display: flex; gap: 10px; margin-top: 3px; flex-wrap: wrap; }
   .ad-meta span { font-size: 11px; color: var(--text2); }
+  .placa-badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-size: 11px; font-weight: 700; color: var(--text); letter-spacing: 1px; font-family: monospace; }
   .ad-price { font-size: 14px; font-weight: 700; color: var(--gold); flex-shrink: 0; }
   .ad-actions { display: flex; gap: 6px; flex-shrink: 0; }
   .icon-btn { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: all 0.2s; }
   .icon-btn:hover { background: var(--surface2); color: var(--text); }
   .icon-btn.copy:hover { border-color: var(--green); color: var(--green); }
   .icon-btn.del:hover { border-color: var(--accent); color: var(--accent); }
+  .status-select-inline { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; color: var(--text); font-size: 11px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; outline: none; }
+
+  /* TAG */
   .tag { padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; }
-  .tag-ativo { background: rgba(46,204,113,0.15); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
+  .tag-publicado { background: rgba(46,204,113,0.15); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
   .tag-pendente { background: rgba(243,156,18,0.15); color: var(--yellow); border: 1px solid rgba(243,156,18,0.3); }
-  .copy-panel { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); margin: 0 20px 16px; padding: 16px; display: none; }
+  .tag-disponivel { background: rgba(46,204,113,0.1); color: var(--green); border: 1px solid rgba(46,204,113,0.25); }
+  .tag-reservado { background: rgba(243,156,18,0.1); color: var(--yellow); border: 1px solid rgba(243,156,18,0.25); }
+  .tag-vendido { background: rgba(52,152,219,0.1); color: var(--blue); border: 1px solid rgba(52,152,219,0.25); }
+
+  /* COPY PANEL */
+  .copy-panel { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); margin: 10px 0 0; padding: 16px; display: none; }
   .copy-panel.open { display: block; }
   .copy-panel h4 { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
   .copy-text { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 12px; color: var(--text); line-height: 1.6; white-space: pre-wrap; font-family: 'Inter', sans-serif; margin-bottom: 10px; }
-  .copy-actions { display: flex; gap: 8px; }
+  .copy-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  /* FORMULÁRIO */
   .form-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 24px; }
   .form-section h3 { font-size: 14px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -97,8 +113,19 @@
   label { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; }
   input, select, textarea { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; color: var(--text); font-size: 13px; font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s; }
   input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+  input.placa-field { text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-family: monospace; font-size: 15px; }
   textarea { resize: vertical; min-height: 80px; }
   select option { background: var(--surface2); }
+
+  /* STATUS SELECTOR NO FORM */
+  .status-options { display: flex; gap: 8px; }
+  .status-opt { flex: 1; padding: 10px; border-radius: 8px; border: 2px solid var(--border); background: transparent; color: var(--text2); font-size: 12px; font-weight: 600; cursor: pointer; text-align: center; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+  .status-opt:hover { background: var(--surface2); }
+  .status-opt.sel-disponivel { border-color: var(--green); background: rgba(46,204,113,0.1); color: var(--green); }
+  .status-opt.sel-reservado { border-color: var(--yellow); background: rgba(243,156,18,0.1); color: var(--yellow); }
+  .status-opt.sel-vendido { border-color: var(--blue); background: rgba(52,152,219,0.1); color: var(--blue); }
+
+  /* OUTROS */
   .lembrete-box { background: linear-gradient(135deg, rgba(230,57,70,0.1), rgba(255,107,53,0.1)); border: 1px solid rgba(230,57,70,0.3); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
   .lembrete-icon { font-size: 24px; flex-shrink: 0; }
   .lembrete-text h4 { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
@@ -119,7 +146,6 @@
   .empty-state { text-align: center; padding: 48px 24px; color: var(--text2); }
   .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
   .empty-state h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-  .empty-state p { font-size: 13px; }
   .checklist { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
   .check-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; }
   .check-item:last-child { border-bottom: none; }
@@ -129,10 +155,23 @@
   .check-item.done .checkbox { background: var(--green); border-color: var(--green); color: white; }
   .check-label { font-size: 13px; font-weight: 500; }
   .check-sub { font-size: 11px; color: var(--text2); margin-top: 1px; }
-  @media (max-width: 640px) {
+
+  /* ESTOQUE TABLE */
+  .estoque-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .estoque-table th { padding: 10px 12px; text-align: left; font-size: 11px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
+  .estoque-table td { padding: 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .estoque-table tr:last-child td { border-bottom: none; }
+  .estoque-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  @media (max-width: 700px) {
     .summary-cards { grid-template-columns: repeat(2, 1fr); }
     .form-grid { grid-template-columns: 1fr; }
     .main { padding: 16px; }
+    .summary-cards .card-publicados { display: none; }
+  }
+  @media (max-width: 420px) {
+    .summary-cards { grid-template-columns: 1fr 1fr; }
+    .ad-price { display: none; }
   }
 </style>
 </head>
@@ -141,63 +180,71 @@
 <div class="header">
   <div class="logo">
     <div class="logo-icon">🚗</div>
-    WR <span>Veículos</span> — Gestor de Anúncios
+    WR <span>Veículos</span> — Gestor
   </div>
-  <div class="header-right">
-    <span class="badge-hoje" id="dataHoje"></span>
-  </div>
+  <span class="badge-hoje" id="dataHoje"></span>
 </div>
 
 <div class="nav-tabs">
   <button class="tab active" onclick="showPage('painel')">📋 Painel do Dia</button>
-  <button class="tab" onclick="showPage('cadastro')">➕ Cadastrar Veículo</button>
-  <button class="tab" onclick="showPage('checklist')">✅ Checklist Diário</button>
-  <button class="tab" onclick="showPage('config')">⚙️ Lembretes</button>
+  <button class="tab" onclick="showPage('cadastro')">➕ Cadastrar</button>
+  <button class="tab" onclick="showPage('estoque')">🏪 Estoque</button>
+  <button class="tab" onclick="showPage('checklist')">✅ Checklist</button>
+  <button class="tab" onclick="showPage('config')">⚙️ Config</button>
 </div>
 
 <div class="main">
 
+  <!-- PAINEL DO DIA -->
   <div class="page active" id="page-painel">
     <div class="summary-cards">
       <div class="summary-card card-total">
-        <div class="label">Total de veículos</div>
+        <div class="label">Total</div>
         <div class="value" id="total-count">0</div>
-        <div class="sub">cadastrados</div>
+        <div class="sub">veículos</div>
       </div>
-      <div class="summary-card card-ativos">
-        <div class="label">Publicar hoje</div>
-        <div class="value" id="publicar-count">0</div>
-        <div class="sub">anúncios prontos</div>
+      <div class="summary-card card-disponivel">
+        <div class="label">Disponíveis</div>
+        <div class="value" id="disponivel-count">0</div>
+        <div class="sub">para vender</div>
       </div>
-      <div class="summary-card card-apagar">
-        <div class="label">Apagar amanhã</div>
-        <div class="value" id="apagar-count">0</div>
-        <div class="sub" id="hora-apagar-sub">às 08:00</div>
+      <div class="summary-card card-reservado">
+        <div class="label">Reservados</div>
+        <div class="value" id="reservado-count">0</div>
+        <div class="sub">aguardando</div>
       </div>
-      <div class="summary-card card-hoje">
-        <div class="label">Já publicados</div>
+      <div class="summary-card card-vendido">
+        <div class="label">Vendidos</div>
+        <div class="value" id="vendido-count">0</div>
+        <div class="sub">este mês</div>
+      </div>
+      <div class="summary-card card-publicados">
+        <div class="label">Publicados hoje</div>
         <div class="value" id="publicados-count">0</div>
-        <div class="sub">hoje</div>
+        <div class="sub">no Marketplace</div>
       </div>
     </div>
+
+    <div class="filtros">
+      <button class="filtro-btn active" onclick="setFiltro('todos', this)">Todos</button>
+      <button class="filtro-btn f-disponivel" onclick="setFiltro('Disponível', this)">🟢 Disponíveis</button>
+      <button class="filtro-btn f-reservado" onclick="setFiltro('Reservado', this)">🟡 Reservados</button>
+      <button class="filtro-btn f-vendido" onclick="setFiltro('Vendido', this)">🔵 Vendidos</button>
+    </div>
+
     <div class="daily-panel">
       <div class="panel-header">
-        <h2><div class="dot-live"></div>Anúncios para publicar hoje</h2>
+        <h2><div class="dot-live"></div>Anúncios de hoje</h2>
         <button class="btn btn-primary" onclick="copiarTodos()">📋 Copiar todos os textos</button>
       </div>
-      <div class="ad-list" id="ad-list-container">
-        <div class="empty-state">
-          <div class="icon">🚘</div>
-          <h3>Nenhum veículo cadastrado</h3>
-          <p>Vá em "Cadastrar Veículo" para adicionar seu primeiro anúncio</p>
-        </div>
-      </div>
+      <div class="ad-list" id="ad-list-container"></div>
     </div>
   </div>
 
+  <!-- CADASTRO -->
   <div class="page" id="page-cadastro">
     <div class="form-section">
-      <h3>🚗 Novo Veículo</h3>
+      <h3>🚗 Cadastrar Novo Veículo</h3>
       <div class="form-grid">
         <div class="form-group">
           <label>Marca</label>
@@ -217,7 +264,11 @@
         </div>
         <div class="form-group">
           <label>Ano</label>
-          <input type="number" id="f-ano" placeholder="2022" min="1990" max="2026">
+          <input type="number" id="f-ano" placeholder="2022" min="1990" max="2030">
+        </div>
+        <div class="form-group">
+          <label>Placa</label>
+          <input type="text" id="f-placa" class="placa-field" placeholder="ABC-1234" maxlength="8">
         </div>
         <div class="form-group">
           <label>Km rodados</label>
@@ -231,120 +282,151 @@
           <label>Cor</label>
           <input type="text" id="f-cor" placeholder="Prata">
         </div>
+        <div class="form-group">
+          <label>Contato para o anúncio</label>
+          <input type="text" id="f-contato" placeholder="(43) 99999-9999 – WR Veículos">
+        </div>
         <div class="form-group full">
-          <label>Diferenciais (opcionais)</label>
+          <label>Status do veículo</label>
+          <div class="status-options">
+            <button class="status-opt sel-disponivel" data-status="Disponível" onclick="selecionarStatus(this)">🟢 Disponível</button>
+            <button class="status-opt" data-status="Reservado" onclick="selecionarStatus(this)">🟡 Reservado</button>
+            <button class="status-opt" data-status="Vendido" onclick="selecionarStatus(this)">🔵 Vendido</button>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label>Diferenciais</label>
           <input type="text" id="f-extras" placeholder="Ex: Multimídia, câmera de ré, ar digital, único dono...">
         </div>
         <div class="form-group full">
-          <label>Contato para o anúncio</label>
-          <input type="text" id="f-contato" placeholder="Ex: (43) 99999-9999 ou @wrveiculos">
+          <label>📸 Link das fotos (Google Drive / Google Fotos)</label>
+          <input type="url" id="f-fotos" placeholder="https://drive.google.com/drive/folders/...">
+          <span style="font-size:11px;color:var(--text3);margin-top:2px;">Cole o link da pasta com as fotos do veículo</span>
         </div>
       </div>
-      <div style="margin-top:16px; display:flex; gap:8px;">
-        <button class="btn btn-primary" onclick="cadastrarVeiculo()">✅ Cadastrar e gerar anúncio</button>
+      <div style="margin-top:16px;display:flex;gap:8px;">
+        <button class="btn btn-primary" onclick="cadastrarVeiculo()">✅ Cadastrar veículo</button>
         <button class="btn btn-outline" onclick="limparForm()">Limpar</button>
       </div>
     </div>
     <div class="form-section" id="preview-section" style="display:none;">
-      <h3>👁️ Preview do anúncio gerado</h3>
+      <h3>👁️ Preview do anúncio</h3>
       <div class="copy-text" id="preview-text"></div>
-      <div style="display:flex; gap:8px;">
+      <div id="preview-fotos" style="display:none;font-size:13px;margin-bottom:10px;padding:10px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;"></div>
+      <div style="display:flex;gap:8px;">
         <button class="btn btn-green" onclick="copiarPreview()">📋 Copiar texto</button>
         <button class="btn btn-outline" onclick="showPage('painel')">Ver no painel</button>
       </div>
     </div>
   </div>
 
+  <!-- ESTOQUE -->
+  <div class="page" id="page-estoque">
+    <div class="daily-panel">
+      <div class="panel-header">
+        <h2>🏪 Controle de Estoque</h2>
+        <button class="btn btn-outline" onclick="showPage('cadastro')">➕ Novo veículo</button>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="estoque-table" id="estoque-table">
+          <thead>
+            <tr>
+              <th>Placa</th>
+              <th>Veículo</th>
+              <th>Ano</th>
+              <th>Km</th>
+              <th>Preço</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="estoque-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
   <div class="page" id="page-checklist">
     <div class="lembrete-box">
       <div class="lembrete-icon">⚡</div>
       <div class="lembrete-text">
         <h4>Rotina diária de anúncios</h4>
-        <p>Siga esse checklist toda manhã para manter os anúncios sempre no topo do Marketplace</p>
+        <p>Siga esse checklist toda manhã para manter os anúncios sempre no topo</p>
       </div>
     </div>
     <div class="checklist">
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="checkbox">✓</div>
-        <div>
-          <div class="check-label">🗑️ Apagar todos os anúncios do dia anterior</div>
-          <div class="check-sub">Acesse o Marketplace → Seus anúncios → Deletar todos</div>
-        </div>
+        <div><div class="check-label">🗑️ Apagar todos os anúncios do dia anterior</div><div class="check-sub">Marketplace → Seus anúncios → Deletar todos</div></div>
       </div>
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="checkbox">✓</div>
-        <div>
-          <div class="check-label">📸 Conferir se as fotos estão atualizadas</div>
-          <div class="check-sub">Veículos com mais fotos têm até 3x mais contatos</div>
-        </div>
+        <div><div class="check-label">🔄 Atualizar status dos veículos no estoque</div><div class="check-sub">Marcar os vendidos e reservados na aba Estoque</div></div>
       </div>
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="checkbox">✓</div>
-        <div>
-          <div class="check-label">📋 Copiar textos do painel de hoje</div>
-          <div class="check-sub">Use o botão "Copiar todos os textos" na aba Painel do Dia</div>
-        </div>
+        <div><div class="check-label">📸 Conferir se as fotos estão atualizadas</div><div class="check-sub">Veículos com mais fotos têm até 3x mais contatos</div></div>
       </div>
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="checkbox">✓</div>
-        <div>
-          <div class="check-label">🚗 Publicar cada veículo no Marketplace</div>
-          <div class="check-sub">Cole o texto, adicione as fotos e publique um por um</div>
-        </div>
+        <div><div class="check-label">📋 Copiar textos do painel de hoje</div><div class="check-sub">Use o botão "Copiar todos os textos" na aba Painel</div></div>
       </div>
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="checkbox">✓</div>
-        <div>
-          <div class="check-label">✅ Marcar como "Publicado" no painel</div>
-          <div class="check-sub">Clique no ✓ de cada anúncio para controlar o progresso</div>
-        </div>
+        <div><div class="check-label">🚗 Publicar cada veículo disponível no Marketplace</div><div class="check-sub">Cole o texto, adicione as fotos e publique</div></div>
       </div>
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="checkbox">✓</div>
-        <div>
-          <div class="check-label">📲 Responder mensagens do dia anterior</div>
-          <div class="check-sub">Velocidade de resposta aumenta as conversões</div>
-        </div>
+        <div><div class="check-label">✅ Marcar como "Publicado" no painel</div><div class="check-sub">Clique no ✓ de cada anúncio publicado</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="checkbox">✓</div>
+        <div><div class="check-label">📲 Responder mensagens do dia anterior</div><div class="check-sub">Velocidade de resposta aumenta as conversões</div></div>
       </div>
     </div>
-    <div style="margin-top:16px; text-align:center;">
-      <button class="btn btn-outline" onclick="resetChecklist()">🔄 Resetar checklist para amanhã</button>
+    <div style="margin-top:16px;text-align:center;">
+      <button class="btn btn-outline" onclick="resetChecklist()">🔄 Resetar checklist</button>
     </div>
   </div>
 
+  <!-- CONFIG -->
   <div class="page" id="page-config">
     <div class="lembrete-box">
       <div class="lembrete-icon">🔔</div>
       <div class="lembrete-text">
         <h4>Configure seus horários</h4>
-        <p>Defina quando você quer ser lembrado de publicar e apagar os anúncios</p>
+        <p>Defina quando quer ser lembrado de publicar e apagar os anúncios</p>
       </div>
     </div>
     <div class="horario-config">
       <div class="horario-row">
-        <div>
-          <div class="horario-label">🗑️ Lembrete para apagar</div>
-          <div class="horario-sub">Alerta matinal para deletar anúncios do dia anterior</div>
-        </div>
+        <div><div class="horario-label">🗑️ Lembrete para apagar</div><div class="horario-sub">Alerta matinal para deletar anúncios do dia anterior</div></div>
         <input type="time" class="time-input" id="hora-apagar" value="08:00">
       </div>
       <div class="horario-row">
-        <div>
-          <div class="horario-label">📢 Lembrete para publicar</div>
-          <div class="horario-sub">Alerta para subir os anúncios novos do dia</div>
-        </div>
+        <div><div class="horario-label">📢 Lembrete para publicar</div><div class="horario-sub">Alerta para subir os anúncios novos do dia</div></div>
         <input type="time" class="time-input" id="hora-publicar" value="08:30">
       </div>
     </div>
-    <button class="btn btn-primary" onclick="salvarConfig()" style="width:100%;">💾 Salvar configurações</button>
-    <div style="margin-top:20px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px;">
-      <h3 style="font-size:14px; font-weight:600; margin-bottom:12px;">📱 Como usar no celular</h3>
-      <div style="display:flex; flex-direction:column; gap:10px; font-size:13px; color:var(--text2); line-height:1.6;">
-        <p>1. <strong style="color:var(--text)">Adicione à tela inicial</strong> do celular (Chrome → Menu → Adicionar à tela inicial)</p>
-        <p>2. <strong style="color:var(--text)">Crie um alarme recorrente</strong> no horário de apagar com a nota "Apagar anúncios WR"</p>
-        <p>3. <strong style="color:var(--text)">Crie um segundo alarme</strong> para publicar, ex: 08:30 "Publicar anúncios WR"</p>
+    <button class="btn btn-primary" onclick="salvarConfig()" style="width:100%;margin-bottom:16px;">💾 Salvar configurações</button>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+      <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;">📱 Como usar no celular</h3>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--text2);line-height:1.6;">
+        <p>1. <strong style="color:var(--text)">Adicione à tela inicial</strong> (Chrome → Menu ⋮ → Adicionar à tela inicial)</p>
+        <p>2. <strong style="color:var(--text)">Crie um alarme recorrente</strong> no horário de apagar — "Apagar anúncios WR"</p>
+        <p>3. <strong style="color:var(--text)">Crie um segundo alarme</strong> para publicar — "Publicar anúncios WR"</p>
         <p>4. <strong style="color:var(--text)">Use o Checklist</strong> para não pular nenhuma etapa</p>
       </div>
+    </div>
+    <div style="margin-top:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+      <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;color:var(--accent);">⚠️ Dados e backup</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-outline" onclick="exportarDados()">📤 Exportar dados</button>
+        <button class="btn btn-outline" onclick="importarDados()">📥 Importar dados</button>
+        <button class="btn btn-outline" style="border-color:rgba(230,57,70,0.4);color:var(--accent);" onclick="limparTudo()">🗑️ Limpar tudo</button>
+      </div>
+      <input type="file" id="import-file" accept=".json" style="display:none;" onchange="lerArquivoImport(event)">
     </div>
   </div>
 
@@ -359,13 +441,14 @@
   let veiculos = JSON.parse(localStorage.getItem('wr_veiculos') || '[]');
   let publicadosHoje = JSON.parse(localStorage.getItem('wr_publicados_hoje') || '[]');
   let config = JSON.parse(localStorage.getItem('wr_config') || '{"horaApagar":"08:00","horaPublicar":"08:30"}');
+  let filtroAtivo = 'todos';
+  let statusSelecionado = 'Disponível';
 
+  // Data e reset diário
   const hoje = new Date();
   document.getElementById('dataHoje').textContent = hoje.toLocaleDateString('pt-BR', { weekday:'long', day:'2-digit', month:'long' });
   document.getElementById('hora-apagar').value = config.horaApagar;
   document.getElementById('hora-publicar').value = config.horaPublicar;
-  document.getElementById('hora-apagar-sub').textContent = 'às ' + config.horaApagar;
-
   const ultimoDia = localStorage.getItem('wr_ultimo_dia');
   const diaHoje = hoje.toDateString();
   if (ultimoDia !== diaHoje) {
@@ -378,56 +461,176 @@
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById('page-' + name).classList.add('active');
-    const map = { painel:0, cadastro:1, checklist:2, config:3 };
+    const map = { painel:0, cadastro:1, estoque:2, checklist:3, config:4 };
     document.querySelectorAll('.tab')[map[name]].classList.add('active');
     if (name === 'painel') renderPainel();
+    if (name === 'estoque') renderEstoque();
+  }
+
+  function statusDot(s) {
+    if (s === 'Reservado') return 'dot-reservado';
+    if (s === 'Vendido') return 'dot-vendido';
+    return 'dot-disponivel';
+  }
+  function statusTag(s) {
+    if (s === 'Reservado') return 'tag-reservado';
+    if (s === 'Vendido') return 'tag-vendido';
+    return 'tag-disponivel';
+  }
+  function statusEmoji(s) {
+    if (s === 'Reservado') return '🟡';
+    if (s === 'Vendido') return '🔵';
+    return '🟢';
   }
 
   function gerarTexto(v) {
     let extras = '';
     if (v.extras) extras = '\n' + v.extras.split(',').map(e => '✅ ' + e.trim()).join('\n');
-    return '🚗 ' + v.marca + ' ' + v.modelo + ' ' + v.ano + '\n📍 ' + v.cor + ' | ' + v.km + '\n💰 ' + v.preco + extras + '\n\n📲 Entre em contato: ' + (v.contato || 'WR Veículos') + '\n✨ Seminovo com garantia e procedência!\n#WRVeiculos #Seminovos #' + v.marca.replace(/ /g,'') + ' #' + v.modelo.split(' ')[0];
+    const placa = v.placa ? '\n🔑 Placa: ' + v.placa.toUpperCase() : '';
+    return '🚗 ' + v.marca + ' ' + v.modelo + ' ' + v.ano +
+      '\n📍 ' + v.cor + ' | ' + v.km + placa +
+      '\n💰 ' + v.preco + extras +
+      '\n\n📲 Entre em contato: ' + (v.contato || 'WR Veículos') +
+      '\n✨ Seminovo com garantia e procedência!' +
+      '\n#WRVeiculos #Seminovos #' + v.marca.replace(/ /g,'') + ' #' + v.modelo.split(' ')[0];
+  }
+
+  function setFiltro(f, btn) {
+    filtroAtivo = f;
+    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderPainel();
   }
 
   function renderPainel() {
+    const disponiveis = veiculos.filter(v => v.status === 'Disponível' || !v.status);
+    const reservados = veiculos.filter(v => v.status === 'Reservado');
+    const vendidos = veiculos.filter(v => v.status === 'Vendido');
+
     document.getElementById('total-count').textContent = veiculos.length;
-    document.getElementById('publicar-count').textContent = veiculos.length;
-    document.getElementById('apagar-count').textContent = veiculos.length;
+    document.getElementById('disponivel-count').textContent = disponiveis.length;
+    document.getElementById('reservado-count').textContent = reservados.length;
+    document.getElementById('vendido-count').textContent = vendidos.length;
     document.getElementById('publicados-count').textContent = publicadosHoje.length;
 
+    let lista = veiculos;
+    if (filtroAtivo !== 'todos') lista = veiculos.filter(v => (v.status || 'Disponível') === filtroAtivo);
+
     const container = document.getElementById('ad-list-container');
-    if (veiculos.length === 0) {
-      container.innerHTML = '<div class="empty-state"><div class="icon">🚘</div><h3>Nenhum veículo cadastrado</h3><p>Vá em "Cadastrar Veículo" para adicionar seu primeiro anúncio</p></div>';
+    if (lista.length === 0) {
+      container.innerHTML = '<div class="empty-state"><div class="icon">🚘</div><h3>Nenhum veículo' + (filtroAtivo !== 'todos' ? ' ' + filtroAtivo.toLowerCase() : ' cadastrado') + '</h3><p>' + (filtroAtivo !== 'todos' ? 'Tente outro filtro' : 'Vá em "Cadastrar" para adicionar') + '</p></div>';
       return;
     }
 
-    container.innerHTML = veiculos.map((v, i) => {
+    container.innerHTML = lista.map(v => {
       const pub = publicadosHoje.includes(v.id);
+      const st = v.status || 'Disponível';
       return '<div class="ad-item" id="item-' + v.id + '">' +
-        '<div class="ad-status ' + (pub ? 'status-ativo' : 'status-pendente') + '"></div>' +
+        '<div class="ad-item-row">' +
+        '<div class="ad-status-dot ' + statusDot(st) + '"></div>' +
         '<div class="ad-thumb">🚗</div>' +
-        '<div class="ad-info"><div class="ad-title">' + v.marca + ' ' + v.modelo + ' ' + v.ano + '</div>' +
-        '<div class="ad-meta"><span>' + v.cor + '</span><span>' + v.km + '</span>' +
-        '<span class="tag ' + (pub ? 'tag-ativo' : 'tag-pendente') + '">' + (pub ? 'Publicado' : 'Pendente') + '</span></div></div>' +
+        '<div class="ad-info">' +
+          '<div class="ad-title">' + v.marca + ' ' + v.modelo + ' ' + v.ano + '</div>' +
+          '<div class="ad-meta">' +
+            (v.placa ? '<span class="placa-badge">' + v.placa.toUpperCase() + '</span>' : '') +
+            '<span>' + v.cor + '</span>' +
+            '<span>' + v.km + '</span>' +
+            '<span class="tag ' + statusTag(st) + '">' + statusEmoji(st) + ' ' + st + '</span>' +
+            '<span class="tag ' + (pub ? 'tag-publicado' : 'tag-pendente') + '">' + (pub ? '✓ Publicado' : '· Pendente') + '</span>' +
+          '</div>' +
+        '</div>' +
         '<div class="ad-price">' + v.preco + '</div>' +
         '<div class="ad-actions">' +
-        '<button class="icon-btn copy" onclick="abrirCopy(\'' + v.id + '\')" title="Copiar texto">📋</button>' +
-        '<button class="icon-btn" onclick="marcarPublicado(\'' + v.id + '\')" title="Marcar publicado" style="' + (pub ? 'color:var(--green);border-color:rgba(46,204,113,0.4)' : '') + '">✓</button>' +
-        '<button class="icon-btn del" onclick="deletarVeiculo(\'' + v.id + '\')" title="Remover">🗑</button>' +
-        '</div></div>' +
+          '<button class="icon-btn copy" onclick="abrirCopy(\'' + v.id + '\')" title="Copiar texto">📋</button>' +
+          (v.fotos ? '<button class="icon-btn" onclick="window.open(\'' + v.fotos + '\',\'_blank\')" title="Ver fotos" style="color:var(--gold);border-color:rgba(244,162,97,0.4)">📸</button>' : '') +
+          '<button class="icon-btn" onclick="marcarPublicado(\'' + v.id + '\')" title="Marcar publicado" style="' + (pub ? 'color:var(--green);border-color:rgba(46,204,113,0.4)' : '') + '">✓</button>' +
+          '<button class="icon-btn del" onclick="deletarVeiculo(\'' + v.id + '\')" title="Remover">🗑️</button>' +
+        '</div>' +
+        '</div>' +
         '<div class="copy-panel" id="copy-' + v.id + '">' +
-        '<h4>Texto pronto para colar no Marketplace</h4>' +
-        '<div class="copy-text" id="ct-' + v.id + '"></div>' +
-        '<div class="copy-actions">' +
-        '<button class="btn btn-green" onclick="copiarById(\'' + v.id + '\')">📋 Copiar</button>' +
-        '<button class="btn btn-outline" onclick="fecharCopy(\'' + v.id + '\')">Fechar</button>' +
-        '</div></div>';
+          '<h4>Texto pronto para colar no Marketplace</h4>' +
+          '<div class="copy-text" id="ct-' + v.id + '"></div>' +
+          '<div class="copy-actions">' +
+            '<button class="btn btn-green" onclick="copiarById(\'' + v.id + '\')">📋 Copiar texto</button>' +
+            (v.fotos ? '<a href="' + v.fotos + '" target="_blank" class="btn btn-outline" style="text-decoration:none;">📸 Abrir fotos</a>' : '<span style="font-size:12px;color:var(--text3);align-self:center;">Sem fotos</span>') +
+            '<button class="btn btn-outline" onclick="fecharCopy(\'' + v.id + '\')">Fechar</button>' +
+          '</div>' +
+        '</div>' +
+        '</div>';
     }).join('');
 
-    veiculos.forEach(v => {
+    lista.forEach(v => {
       const el = document.getElementById('ct-' + v.id);
       if (el) el.textContent = gerarTexto(v);
     });
+  }
+
+  function renderEstoque() {
+    const tbody = document.getElementById('estoque-body');
+    if (!veiculos.length) {
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text2);">Nenhum veículo cadastrado</td></tr>';
+      return;
+    }
+    tbody.innerHTML = veiculos.map(v => {
+      const st = v.status || 'Disponível';
+      return '<tr>' +
+        '<td><span class="placa-badge">' + (v.placa ? v.placa.toUpperCase() : '—') + '</span></td>' +
+        '<td><strong>' + v.marca + ' ' + v.modelo + '</strong><br><span style="font-size:11px;color:var(--text2);">' + v.cor + '</span></td>' +
+        '<td>' + v.ano + '</td>' +
+        '<td>' + v.km + '</td>' +
+        '<td style="color:var(--gold);font-weight:700;">' + v.preco + '</td>' +
+        '<td>' +
+          '<select class="status-select-inline" onchange="alterarStatus(\'' + v.id + '\', this.value)">' +
+            '<option value="Disponível"' + (st==='Disponível'?' selected':'') + '>🟢 Disponível</option>' +
+            '<option value="Reservado"' + (st==='Reservado'?' selected':'') + '>🟡 Reservado</option>' +
+            '<option value="Vendido"' + (st==='Vendido'?' selected':'') + '>🔵 Vendido</option>' +
+          '</select>' +
+        '</td>' +
+        '<td>' +
+          '<div style="display:flex;gap:6px;">' +
+            '<button class="icon-btn copy" onclick="abrirEdicao(\'' + v.id + '\')" title="Editar">✏️</button>' +
+            '<button class="icon-btn del" onclick="deletarVeiculo(\'' + v.id + '\')" title="Remover">🗑️</button>' +
+          '</div>' +
+        '</td>' +
+        '</tr>';
+    }).join('');
+  }
+
+  function alterarStatus(id, novoStatus) {
+    const idx = veiculos.findIndex(v => v.id === id);
+    if (idx !== -1) {
+      veiculos[idx].status = novoStatus;
+      salvarVeiculos();
+      showToast(statusEmoji(novoStatus), 'Status alterado para ' + novoStatus, 'success');
+    }
+  }
+
+  function abrirEdicao(id) {
+    const v = veiculos.find(x => x.id === id);
+    if (!v) return;
+    showPage('cadastro');
+    document.getElementById('f-marca').value = v.marca;
+    document.getElementById('f-modelo').value = v.modelo;
+    document.getElementById('f-ano').value = v.ano;
+    document.getElementById('f-placa').value = v.placa || '';
+    document.getElementById('f-km').value = v.km;
+    document.getElementById('f-preco').value = v.preco;
+    document.getElementById('f-cor').value = v.cor;
+    document.getElementById('f-extras').value = v.extras || '';
+    document.getElementById('f-contato').value = v.contato || '';
+    document.getElementById('f-fotos').value = v.fotos || '';
+    statusSelecionado = v.status || 'Disponível';
+    document.querySelectorAll('.status-opt').forEach(b => {
+      b.className = 'status-opt';
+      if (b.dataset.status === statusSelecionado) b.classList.add('sel-' + statusSelecionado.toLowerCase());
+    });
+    deletarVeiculo(id, true);
+  }
+
+  function selecionarStatus(btn) {
+    statusSelecionado = btn.dataset.status;
+    document.querySelectorAll('.status-opt').forEach(b => b.className = 'status-opt');
+    btn.classList.add('sel-' + statusSelecionado.toLowerCase());
   }
 
   function abrirCopy(id) {
@@ -446,9 +649,11 @@
   }
 
   function copiarTodos() {
-    if (!veiculos.length) { showToast('⚠️', 'Nenhum veículo cadastrado', 'error'); return; }
-    const todos = veiculos.map(v => gerarTexto(v)).join('\n\n───────────────\n\n');
-    navigator.clipboard.writeText(todos).then(() => showToast('✅', veiculos.length + ' anúncios copiados!', 'success'));
+    const disponiveis = veiculos.filter(v => (v.status || 'Disponível') === 'Disponível');
+    const alvo = filtroAtivo === 'todos' ? disponiveis : veiculos.filter(v => (v.status || 'Disponível') === filtroAtivo);
+    if (!alvo.length) { showToast('⚠️', 'Nenhum veículo disponível para copiar', 'error'); return; }
+    const todos = alvo.map(v => gerarTexto(v)).join('\n\n───────────────\n\n');
+    navigator.clipboard.writeText(todos).then(() => showToast('✅', alvo.length + ' anúncios copiados!', 'success'));
   }
 
   function marcarPublicado(id) {
@@ -460,15 +665,19 @@
     }
   }
 
-  function deletarVeiculo(id) {
-    if (confirm('Remover este veículo do painel?')) {
-      veiculos = veiculos.filter(v => v.id !== id);
-      publicadosHoje = publicadosHoje.filter(p => p !== id);
-      localStorage.setItem('wr_veiculos', JSON.stringify(veiculos));
-      localStorage.setItem('wr_publicados_hoje', JSON.stringify(publicadosHoje));
-      showToast('🗑️', 'Veículo removido!', 'error');
-      renderPainel();
-    }
+  function deletarVeiculo(id, silencioso) {
+    if (!silencioso && !confirm('Remover este veículo?')) return;
+    veiculos = veiculos.filter(v => v.id !== id);
+    publicadosHoje = publicadosHoje.filter(p => p !== id);
+    salvarVeiculos();
+    if (!silencioso) showToast('🗑️', 'Veículo removido!', 'error');
+    renderPainel();
+    renderEstoque();
+  }
+
+  function salvarVeiculos() {
+    localStorage.setItem('wr_veiculos', JSON.stringify(veiculos));
+    localStorage.setItem('wr_publicados_hoje', JSON.stringify(publicadosHoje));
   }
 
   function cadastrarVeiculo() {
@@ -479,18 +688,27 @@
     if (!marca || !modelo || !ano || !preco) { showToast('⚠️', 'Preencha: marca, modelo, ano e preço', 'error'); return; }
     const v = {
       id: Date.now().toString(), marca, modelo, ano,
+      placa: document.getElementById('f-placa').value.trim(),
       km: document.getElementById('f-km').value || 'Consulte',
       preco, cor: document.getElementById('f-cor').value || 'Consulte',
       extras: document.getElementById('f-extras').value,
-      contato: document.getElementById('f-contato').value
+      contato: document.getElementById('f-contato').value,
+      fotos: document.getElementById('f-fotos').value,
+      status: statusSelecionado
     };
     veiculos.push(v);
-    localStorage.setItem('wr_veiculos', JSON.stringify(veiculos));
+    salvarVeiculos();
     const texto = gerarTexto(v);
     document.getElementById('preview-text').textContent = texto;
+    const prevFotos = document.getElementById('preview-fotos');
+    if (v.fotos) {
+      prevFotos.innerHTML = '📸 <a href="' + v.fotos + '" target="_blank" style="color:var(--gold);">Abrir pasta de fotos</a>';
+      prevFotos.style.display = 'block';
+    } else { prevFotos.style.display = 'none'; }
     document.getElementById('preview-section').style.display = 'block';
     window._previewTexto = texto;
-    showToast('✅', 'Veículo cadastrado com sucesso!', 'success');
+    showToast('✅', 'Veículo cadastrado!', 'success');
+    limparForm();
   }
 
   function copiarPreview() {
@@ -498,9 +716,11 @@
   }
 
   function limparForm() {
-    ['f-modelo','f-ano','f-km','f-preco','f-cor','f-extras','f-contato'].forEach(id => document.getElementById(id).value = '');
+    ['f-modelo','f-ano','f-placa','f-km','f-preco','f-cor','f-extras','f-contato','f-fotos'].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
     document.getElementById('f-marca').value = '';
-    document.getElementById('preview-section').style.display = 'none';
+    statusSelecionado = 'Disponível';
+    document.querySelectorAll('.status-opt').forEach(b => b.className = 'status-opt');
+    document.querySelector('[data-status="Disponível"]').classList.add('sel-disponivel');
   }
 
   function toggleCheck(item) { item.classList.toggle('done'); }
@@ -510,8 +730,50 @@
     config.horaApagar = document.getElementById('hora-apagar').value;
     config.horaPublicar = document.getElementById('hora-publicar').value;
     localStorage.setItem('wr_config', JSON.stringify(config));
-    document.getElementById('hora-apagar-sub').textContent = 'às ' + config.horaApagar;
     showToast('💾', 'Configurações salvas!', 'success');
+  }
+
+  function exportarDados() {
+    const dados = { veiculos, publicadosHoje, config, exportadoEm: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(dados, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url;
+    a.download = 'wr-veiculos-backup-' + new Date().toLocaleDateString('pt-BR').replace(/\//g,'-') + '.json';
+    a.click(); URL.revokeObjectURL(url);
+    showToast('📤', 'Backup exportado!', 'success');
+  }
+
+  function importarDados() { document.getElementById('import-file').click(); }
+
+  function lerArquivoImport(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      try {
+        const dados = JSON.parse(ev.target.result);
+        if (dados.veiculos) {
+          veiculos = dados.veiculos;
+          publicadosHoje = dados.publicadosHoje || [];
+          config = dados.config || config;
+          salvarVeiculos();
+          localStorage.setItem('wr_config', JSON.stringify(config));
+          renderPainel();
+          showToast('📥', veiculos.length + ' veículos importados!', 'success');
+        }
+      } catch { showToast('❌', 'Arquivo inválido', 'error'); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  }
+
+  function limparTudo() {
+    if (confirm('Tem certeza? Isso apaga TODOS os veículos cadastrados!')) {
+      veiculos = []; publicadosHoje = [];
+      salvarVeiculos();
+      renderPainel(); renderEstoque();
+      showToast('🗑️', 'Todos os dados removidos', 'error');
+    }
   }
 
   function showToast(icon, msg, type) {
