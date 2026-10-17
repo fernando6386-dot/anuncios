@@ -1,0 +1,1170 @@
+{
+ "meta": {
+  "atualizadoEm": "2026-10-16",
+  "dataCurta": "16/10",
+  "dataLonga": "16/10/2026",
+  "novasHoje": 108,
+  "totalBase": "3.098",
+  "whatsapp": "5543996386127",
+  "whatsappLabel": "(43) 99638-6127"
+ },
+ "oferta": {
+  "foto": "img/st/compass_hd.jpg",
+  "carro": "Jeep Compass Longitude 2019",
+  "de": 95900,
+  "por": 89900,
+  "km": "72 mil km",
+  "cartaId": "AUT1008227",
+  "administradora": "Itaú",
+  "credito": 91475,
+  "entrada": 26070,
+  "parcela": 3246
+ },
+ "ofertaImovel": {
+  "foto": "img/st/i4.jpg",
+  "cartaId": "IMO1013152",
+  "administradora": "HS",
+  "credito": 232450,
+  "entradaPct": "30,5%",
+  "imovel": "apartamento no Ideal, Londrina",
+  "preco": 200000
+ },
+ "cartas_legenda": "[id, tipo I/A/C, administradora, crédito, entrada, % entrada, saldo devedor, parcela 'qtd x valor']",
+ "cartas": [
+  [
+   "IMO1015223",
+   "I",
+   "Embracon",
+   95899,
+   33085,
+   34.5,
+   82861,
+   "186x445"
+  ],
+  [
+   "IMO1013224",
+   "I",
+   "Itaú",
+   113358,
+   47043,
+   41.5,
+   97756,
+   "19x3652"
+  ],
+  [
+   "IMO1014270",
+   "I",
+   "Magalu",
+   108380,
+   47145,
+   43.5,
+   104052,
+   "72x1445"
+  ],
+  [
+   "IMO1009070",
+   "I",
+   "Rodobens",
+   112000,
+   48720,
+   43.5,
+   105070,
+   "49x1609"
+  ],
+  [
+   "IMO10081313",
+   "I",
+   "Porto Seguro",
+   111000,
+   48285,
+   43.5,
+   70965,
+   "171x415"
+  ],
+  [
+   "IMO1013152",
+   "I",
+   "HS",
+   232450,
+   70897,
+   30.5,
+   217587,
+   "29x7503"
+  ],
+  [
+   "IMO1014109",
+   "I",
+   "Porto Seguro",
+   165690,
+   60477,
+   36.5,
+   162736,
+   "56x2906"
+  ],
+  [
+   "IMO1009241",
+   "I",
+   "Magalu",
+   241553,
+   95413,
+   39.5,
+   179949,
+   "110x1636"
+  ],
+  [
+   "IMO1009078",
+   "I",
+   "Rodobens",
+   224000,
+   95200,
+   42.5,
+   210786,
+   "8x2489"
+  ],
+  [
+   "IMO1014229",
+   "I",
+   "Sponchiado",
+   246439,
+   109665,
+   44.5,
+   205000,
+   "40x5125"
+  ],
+  [
+   "IMO1008243",
+   "I",
+   "HS",
+   305500,
+   123728,
+   40.5,
+   290429,
+   "94x2795"
+  ],
+  [
+   "IMO1014190",
+   "I",
+   "Embracon",
+   304000,
+   129200,
+   42.5,
+   298366,
+   "104x2543"
+  ],
+  [
+   "IMO1008799",
+   "I",
+   "Maggi",
+   371000,
+   157675,
+   42.5,
+   364719,
+   ""
+  ],
+  [
+   "IMO10081399",
+   "I",
+   "Santander",
+   288566,
+   125526,
+   43.5,
+   258323,
+   "69x3744"
+  ],
+  [
+   "IMO1009105",
+   "I",
+   "Rodobens",
+   324000,
+   144180,
+   44.5,
+   300081,
+   "8x3518"
+  ],
+  [
+   "IMO1002046",
+   "I",
+   "BR Consórcios",
+   545000,
+   188025,
+   34.5,
+   473727,
+   "57x8311"
+  ],
+  [
+   "IMO1006567",
+   "I",
+   "HS",
+   574000,
+   215250,
+   37.5,
+   512025,
+   "30x13608"
+  ],
+  [
+   "IMO10081023",
+   "I",
+   "Santander",
+   402000,
+   166830,
+   41.5,
+   400758,
+   "102x3929"
+  ],
+  [
+   "IMO10081386",
+   "I",
+   "Remaza",
+   465000,
+   206925,
+   44.5,
+   454422,
+   "53x8574"
+  ],
+  [
+   "IMO1013338",
+   "I",
+   "Porto Seguro",
+   458000,
+   208390,
+   45.5,
+   428947,
+   "137x3131"
+  ],
+  [
+   "IMO1014322",
+   "I",
+   "Embracon",
+   723520,
+   235144,
+   32.5,
+   620514,
+   "27x22982"
+  ],
+  [
+   "IMO1003017",
+   "I",
+   "Porto Seguro",
+   620500,
+   245098,
+   39.5,
+   601667,
+   "x9063"
+  ],
+  [
+   "IMO1014075",
+   "I",
+   "Rodobens",
+   856000,
+   372360,
+   43.5,
+   827855,
+   "8x11284"
+  ],
+  [
+   "IMO1007194",
+   "I",
+   "Remaza",
+   760000,
+   338200,
+   44.5,
+   739031,
+   "89x7476"
+  ],
+  [
+   "IMO1015368",
+   "I",
+   "Santander",
+   932600,
+   433659,
+   46.5,
+   796032,
+   "64x12438"
+  ],
+  [
+   "IMO10081421",
+   "I",
+   "Itaú",
+   1172000,
+   462940,
+   39.5,
+   1139150,
+   "56x12440"
+  ],
+  [
+   "IMO1009289",
+   "I",
+   "HS",
+   1000650,
+   405263,
+   40.5,
+   935636,
+   "52x17993"
+  ],
+  [
+   "IMO10081222",
+   "I",
+   "CNP",
+   2360000,
+   955800,
+   40.5,
+   2142575,
+   "x34510"
+  ],
+  [
+   "IMO1009074",
+   "I",
+   "Embracon",
+   1112140,
+   483781,
+   43.5,
+   959822,
+   "226x4247"
+  ],
+  [
+   "IMO1014281",
+   "I",
+   "Mycon",
+   1793569,
+   887817,
+   49.5,
+   1761946,
+   "102x11675"
+  ],
+  [
+   "AUT1013007",
+   "A",
+   "Itaú",
+   46208,
+   13631,
+   29.5,
+   41225,
+   "26x1586"
+  ],
+  [
+   "AUT1007094",
+   "A",
+   "Mycon",
+   47800,
+   21749,
+   45.5,
+   38532,
+   "39x988"
+  ],
+  [
+   "AUT1013297",
+   "A",
+   "Magalu",
+   37176,
+   17287,
+   46.5,
+   35728,
+   "51x701"
+  ],
+  [
+   "AUT1008111",
+   "A",
+   "HS",
+   49000,
+   23275,
+   47.5,
+   48701,
+   "31x1571"
+  ],
+  [
+   "AUT1015085",
+   "A",
+   "Âncora",
+   40000,
+   19800,
+   49.5,
+   38560,
+   "80x482"
+  ],
+  [
+   "AUT1006492",
+   "A",
+   "Bradesco",
+   44000,
+   21780,
+   49.5,
+   39025,
+   "25x1561"
+  ],
+  [
+   "AUT1014054",
+   "A",
+   "Porto Seguro",
+   55800,
+   19251,
+   34.5,
+   55660,
+   "23x2420"
+  ],
+  [
+   "AUT1013247",
+   "A",
+   "Itaú",
+   65100,
+   23111,
+   35.5,
+   63252,
+   "36x1757"
+  ],
+  [
+   "AUT1008599",
+   "A",
+   "Gazin",
+   56000,
+   21560,
+   38.5,
+   54360,
+   "60x906"
+  ],
+  [
+   "AUT1015041",
+   "A",
+   "Caixa",
+   54000,
+   21330,
+   39.5,
+   49643,
+   "57x871"
+  ],
+  [
+   "AUT1008889",
+   "A",
+   "Mycon",
+   77250,
+   30514,
+   39.5,
+   67338,
+   "x2494"
+  ],
+  [
+   "AUT0929226",
+   "A",
+   "Servopa",
+   57100,
+   23697,
+   41.5,
+   52020,
+   "x1734"
+  ],
+  [
+   "AUT1008227",
+   "A",
+   "Itaú",
+   91475,
+   26070,
+   28.5,
+   90888,
+   "28x3246"
+  ],
+  [
+   "AUT1014185",
+   "A",
+   "Caixa",
+   98750,
+   36044,
+   36.5,
+   96915,
+   "39x2485"
+  ],
+  [
+   "AUT1013358",
+   "A",
+   "HS",
+   95000,
+   36575,
+   38.5,
+   91766,
+   "29x3056"
+  ],
+  [
+   "AUT1014248",
+   "A",
+   "Magalu",
+   82298,
+   32508,
+   39.5,
+   79232,
+   "53x1495"
+  ],
+  [
+   "AUT1014266",
+   "A",
+   "Porto Seguro",
+   107500,
+   43538,
+   40.5,
+   103180,
+   "67x1540"
+  ],
+  [
+   "AUT1013135",
+   "A",
+   "Rodobens",
+   84500,
+   34223,
+   40.5,
+   68448,
+   "32x2139"
+  ],
+  [
+   "AUT1008229",
+   "A",
+   "Itaú",
+   139214,
+   39676,
+   28.5,
+   138124,
+   "28x4933"
+  ],
+  [
+   "AUT1006315",
+   "A",
+   "Ademicon",
+   158000,
+   59250,
+   37.5,
+   151840,
+   "32x4745"
+  ],
+  [
+   "AUT1008891",
+   "A",
+   "Mycon",
+   144850,
+   57216,
+   39.5,
+   141912,
+   "x3835"
+  ],
+  [
+   "AUT1008800",
+   "A",
+   "Porto Seguro",
+   166300,
+   67352,
+   40.5,
+   156800,
+   "50x3136"
+  ],
+  [
+   "AUT1007161",
+   "A",
+   "Bradesco",
+   154503,
+   62574,
+   40.5,
+   140100,
+   "34x4121"
+  ],
+  [
+   "AUT1009135",
+   "A",
+   "Randon",
+   134500,
+   55818,
+   41.5,
+   133304,
+   "38x3508"
+  ],
+  [
+   "AUT1008231",
+   "A",
+   "Itaú",
+   235986,
+   69616,
+   29.5,
+   223418,
+   "26x8593"
+  ],
+  [
+   "AUT1013137",
+   "A",
+   "Rodobens",
+   255000,
+   98175,
+   38.5,
+   251080,
+   "40x6277"
+  ],
+  [
+   "AUT1008893",
+   "A",
+   "Mycon",
+   229960,
+   88535,
+   38.5,
+   227605,
+   "x6503"
+  ],
+  [
+   "AUT1014098",
+   "A",
+   "HS",
+   300000,
+   127500,
+   42.5,
+   299026,
+   "31x9646"
+  ],
+  [
+   "AUT1005233",
+   "A",
+   "Bradesco",
+   332816,
+   141447,
+   42.5,
+   303882,
+   "36x7892"
+  ],
+  [
+   "AUT1009174",
+   "A",
+   "Caixa",
+   335500,
+   145943,
+   43.5,
+   311450,
+   "8x7605"
+  ],
+  [
+   "CAM1013040",
+   "C",
+   "Caixa",
+   456000,
+   175560,
+   38.5,
+   446210,
+   "7x10030"
+  ],
+  [
+   "CAM1014026",
+   "C",
+   "Mycon",
+   218000,
+   90470,
+   41.5,
+   210898,
+   "42x4968"
+  ],
+  [
+   "CAM1008032",
+   "C",
+   "Canopus",
+   240000,
+   99600,
+   41.5,
+   234807,
+   "42x5399"
+  ]
+ ],
+ "estoque_legenda": "A: [nome, ano, preço, preço promocional (0 se não houver), foto] · I: [tipo, bairro/cidade, preço, foto]",
+ "estoque": {
+  "A": [
+   [
+    "Toyota Corolla Cross XRE",
+    2022,
+    131900,
+    125900,
+    "img/st/a0.jpg"
+   ],
+   [
+    "Mercedes GLE 400 Coupé",
+    2019,
+    275900,
+    0,
+    "img/st/a1.jpg"
+   ],
+   [
+    "Chevrolet Spin LT",
+    2023,
+    85900,
+    79900,
+    "img/st/a2.jpg"
+   ],
+   [
+    "CAOA Chery Tiggo 5X",
+    2021,
+    89900,
+    85900,
+    "img/st/a3.jpg"
+   ],
+   [
+    "Jeep Compass Longitude",
+    2019,
+    95900,
+    89900,
+    "img/st/a4.jpg"
+   ],
+   [
+    "Audi A3 Sedan S-Line",
+    2024,
+    209900,
+    199900,
+    "img/st/a5.jpg"
+   ],
+   [
+    "BMW X1 sDrive20i",
+    2022,
+    167900,
+    0,
+    "img/st/a6.jpg"
+   ],
+   [
+    "BMW 320i M Sport",
+    2022,
+    223900,
+    0,
+    "img/st/a7.jpg"
+   ],
+   [
+    "Chevrolet S10 LTZ 2.8 4x4",
+    2025,
+    255900,
+    249900,
+    "img/st/a8.jpg"
+   ],
+   [
+    "Chevrolet S10 LTZ 4x4",
+    2023,
+    179900,
+    0,
+    "img/st/a9.jpg"
+   ],
+   [
+    "Hyundai HB20S Comfort Plus",
+    2025,
+    95900,
+    91900,
+    "img/st/a10.jpg"
+   ],
+   [
+    "Nissan Altima SL",
+    2014,
+    69900,
+    0,
+    "img/st/a11.jpg"
+   ],
+   [
+    "CAOA Chery Tiggo 8 Pro",
+    2024,
+    149900,
+    0,
+    "img/st/a12.jpg"
+   ],
+   [
+    "VW T-Cross Highline",
+    2025,
+    139900,
+    0,
+    "img/st/a13.jpg"
+   ],
+   [
+    "Land Rover Discovery Sport",
+    2023,
+    239900,
+    225900,
+    "img/st/a14.jpg"
+   ],
+   [
+    "Mercedes GLC 300 Coupé",
+    2021,
+    319900,
+    0,
+    "img/st/a15.jpg"
+   ],
+   [
+    "Mitsubishi Eclipse Cross HPE",
+    2023,
+    118900,
+    116900,
+    "img/st/a16.jpg"
+   ],
+   [
+    "VW Golf Sportline",
+    2012,
+    57900,
+    0,
+    "img/st/a17.jpg"
+   ],
+   [
+    "Mercedes GLA 200 Advance",
+    2018,
+    109900,
+    99900,
+    "img/st/a18.jpg"
+   ],
+   [
+    "Audi Q5 S-Line Black",
+    2022,
+    254900,
+    248900,
+    "img/st/a19.jpg"
+   ],
+   [
+    "Honda HR-V EX",
+    2021,
+    114900,
+    111900,
+    "img/st/a20.jpg"
+   ],
+   [
+    "Toyota Hilux SRX",
+    2026,
+    309900,
+    299900,
+    "img/st/a21.jpg"
+   ],
+   [
+    "BMW 320i GP",
+    2015,
+    99900,
+    0,
+    "img/st/a22.jpg"
+   ],
+   [
+    "Ford Ranger XLS 4x4",
+    2016,
+    99900,
+    0,
+    "img/st/a23.jpg"
+   ],
+   [
+    "Mercedes C 250 Sport",
+    2015,
+    139900,
+    129900,
+    "img/st/a24.jpg"
+   ],
+   [
+    "BMW 320i M Sport",
+    2025,
+    317900,
+    0,
+    "img/st/a25.jpg"
+   ],
+   [
+    "Citroën Aircross Shine",
+    2016,
+    57900,
+    0,
+    "img/st/a26.jpg"
+   ],
+   [
+    "Ford F-150 Platinum",
+    2023,
+    349900,
+    339900,
+    "img/st/a27.jpg"
+   ],
+   [
+    "VW Amarok Extreme",
+    2024,
+    229900,
+    0,
+    "img/st/a28.jpg"
+   ],
+   [
+    "BMW 320i",
+    2017,
+    115900,
+    112900,
+    "img/st/a29.jpg"
+   ],
+   [
+    "Toyota Hilux SRX",
+    2023,
+    249900,
+    246900,
+    "img/st/a30.jpg"
+   ],
+   [
+    "Nissan Frontier Platinum",
+    2024,
+    209900,
+    199900,
+    "img/st/a31.jpg"
+   ],
+   [
+    "Chevrolet Tracker Premier",
+    2018,
+    87900,
+    0,
+    "img/st/a32.jpg"
+   ],
+   [
+    "BMW X1 sDrive20i",
+    2018,
+    121900,
+    115900,
+    "img/st/a33.jpg"
+   ],
+   [
+    "Hyundai HB20 Comfort Plus",
+    2019,
+    69900,
+    0,
+    "img/st/a34.jpg"
+   ],
+   [
+    "Ford Ranger Limited 3.2",
+    2023,
+    189900,
+    179900,
+    "img/st/a35.jpg"
+   ],
+   [
+    "Land Rover Discovery Sport S",
+    2022,
+    229900,
+    209900,
+    "img/st/a36.jpg"
+   ],
+   [
+    "VW Fusca 1300",
+    1970,
+    59900,
+    0,
+    "img/st/a37.jpg"
+   ],
+   [
+    "Jeep Compass Trailhawk",
+    2022,
+    139900,
+    124900,
+    "img/st/a38.jpg"
+   ],
+   [
+    "Chevrolet S10 LTZ",
+    2025,
+    255900,
+    249900,
+    "img/st/a39.jpg"
+   ],
+   [
+    "Jeep Compass Limited",
+    2021,
+    116900,
+    109900,
+    "img/st/a40.jpg"
+   ],
+   [
+    "VW Amarok V6 Highline",
+    2023,
+    214900,
+    209900,
+    "img/st/a41.jpg"
+   ],
+   [
+    "Mercedes GLA 200 Enduro",
+    2018,
+    125900,
+    113900,
+    "img/st/a42.jpg"
+   ],
+   [
+    "VW Amarok V6 Highline",
+    2018,
+    144900,
+    139900,
+    "img/st/a43.jpg"
+   ],
+   [
+    "VW Saveiro Cross",
+    2014,
+    59900,
+    0,
+    "img/st/a44.jpg"
+   ],
+   [
+    "Toyota Corolla Hybrid",
+    2022,
+    134900,
+    124900,
+    "img/st/a45.jpg"
+   ],
+   [
+    "BMW X5 xDrive45e",
+    2022,
+    378900,
+    369900,
+    "img/st/a46.jpg"
+   ],
+   [
+    "VW Fusca 1600",
+    1985,
+    59900,
+    0,
+    "img/st/a47.jpg"
+   ]
+  ],
+  "I": [
+   [
+    "Apartamento",
+    "Centro, Londrina",
+    169000,
+    "img/st/i0.jpg"
+   ],
+   [
+    "Apartamento",
+    "Jd. Caviúna, Londrina",
+    175000,
+    "img/st/i1.jpg"
+   ],
+   [
+    "Apartamento",
+    "Centro, Londrina",
+    189000,
+    "img/st/i2.jpg"
+   ],
+   [
+    "Apartamento",
+    "Ipê, Londrina",
+    200000,
+    "img/st/i3.jpg"
+   ],
+   [
+    "Apartamento",
+    "Ideal, Londrina",
+    200000,
+    "img/st/i4.jpg"
+   ],
+   [
+    "Apartamento",
+    "Ribeirão Limeiro, Londrina",
+    239000,
+    "img/st/i5.jpg"
+   ],
+   [
+    "Apartamento",
+    "Centro, Londrina",
+    255000,
+    "img/st/i6.jpg"
+   ],
+   [
+    "Apartamento",
+    "Colinas, Londrina",
+    280000,
+    "img/st/i7.jpg"
+   ],
+   [
+    "Apartamento",
+    "Jd. Higienópolis, Londrina",
+    320000,
+    "img/st/i8.jpg"
+   ],
+   [
+    "Apartamento",
+    "Gleba Palhano, Londrina",
+    340000,
+    "img/st/i9.jpg"
+   ],
+   [
+    "Casa em condomínio",
+    "Recanto do Tucunaré, Alvorada do Sul",
+    470000,
+    "img/st/i10.jpg"
+   ],
+   [
+    "Casa",
+    "Jd. São Vicente Palloti, Londrina",
+    570000,
+    "img/st/i11.jpg"
+   ],
+   [
+    "Apartamento",
+    "Terra Bonita, Londrina",
+    580000,
+    "img/st/i12.jpg"
+   ],
+   [
+    "Apartamento",
+    "Gleba Palhano, Londrina",
+    590000,
+    "img/st/i13.jpg"
+   ],
+   [
+    "Casa",
+    "Maria Cecília, Londrina",
+    600000,
+    "img/st/i14.jpg"
+   ],
+   [
+    "Casa em condomínio",
+    "Heimtal, Londrina",
+    640000,
+    "img/st/i15.jpg"
+   ],
+   [
+    "Casa em condomínio",
+    "Heimtal, Londrina",
+    650000,
+    "img/st/i16.jpg"
+   ],
+   [
+    "Apartamento",
+    "Centro, Londrina",
+    680000,
+    "img/st/i17.jpg"
+   ],
+   [
+    "Apartamento",
+    "Gleba Palhano, Londrina",
+    870000,
+    "img/st/i18.jpg"
+   ],
+   [
+    "Casa com piscina",
+    "Santa Mônica, Londrina",
+    890000,
+    "img/st/i19.jpg"
+   ],
+   [
+    "Casa",
+    "Jd. Alvorada, Londrina",
+    890000,
+    "img/st/i20.jpg"
+   ],
+   [
+    "Casa",
+    "Jd. Alvorada, Londrina",
+    950000,
+    "img/st/i21.jpg"
+   ],
+   [
+    "Casa em condomínio",
+    "Centro, Londrina",
+    980000,
+    "img/st/i22.jpg"
+   ],
+   [
+    "Casa em condomínio com piscina",
+    "Farid Libos, Londrina",
+    1190000,
+    "img/st/i23.jpg"
+   ],
+   [
+    "Casa em condomínio",
+    "Morada das Flores, Londrina",
+    1490000,
+    "img/st/i24.jpg"
+   ],
+   [
+    "Casa em condomínio com piscina",
+    "Londrina",
+    1790000,
+    "img/st/i25.jpg"
+   ],
+   [
+    "Casa em condomínio",
+    "Cidade Industrial 2, Londrina",
+    1890000,
+    "img/st/i26.jpg"
+   ]
+  ]
+ }
+}
