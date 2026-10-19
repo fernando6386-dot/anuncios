@@ -9,16 +9,16 @@
   "whatsappLabel": "(43) 99638-6127"
  },
  "oferta": {
-  "foto": "img/car/oferta.jpg",
-  "carro": "Chevrolet Tracker Premier 1.2 Turbo 2025",
-  "de": null,
-  "por": 134900,
-  "km": "pronta entrega",
-  "cartaId": "AUT1012013",
-  "administradora": "Itaú",
-  "credito": 135378,
-  "entrada": 38583,
-  "parcela": 4177
+  "foto": "img/st/compass_hd.jpg",
+  "carro": "Jeep Compass Longitude 2019",
+  "de": 95900,
+  "por": 89900,
+  "km": "72 mil km",
+  "cartaId": "AUT1014161",
+  "administradora": "Caixa",
+  "credito": 90000,
+  "entrada": 25650,
+  "parcela": 4000
  },
  "ofertaImovel": {
   "foto": "img/st/i4.jpg",
@@ -776,417 +776,333 @@
  "estoque": {
   "A": [
    [
-    "Ford Ranger V6 CD Limited",
-    2024,
-    269900,
-    0,
-    "img/car/c0.jpg"
+    "VW Tera High TSI",
+    2026,
+    132900,
+    129900,
+    "img/wr/v0.jpg"
    ],
    [
-    "Toyota Hilux SW4 SR 4x4",
-    2013,
+    "Toyota Corolla Cross XRE",
+    2022,
+    131900,
+    125900,
+    "img/wr/v1.jpg"
+   ],
+   [
+    "Mercedes GLE 400 Coupé",
+    2019,
+    275900,
+    0,
+    "img/wr/v2.jpg"
+   ],
+   [
+    "Chevrolet Spin LT",
+    2023,
+    85900,
+    79900,
+    "img/wr/v3.jpg"
+   ],
+   [
+    "CAOA Chery Tiggo 5X",
+    2021,
+    89900,
+    85900,
+    "img/wr/v4.jpg"
+   ],
+   [
+    "Jeep Compass Longitude",
+    2019,
+    95900,
+    89900,
+    "img/wr/v5.jpg"
+   ],
+   [
+    "Audi A3 Sedan S-Line",
+    2024,
+    209900,
+    199900,
+    "img/wr/v6.jpg"
+   ],
+   [
+    "BMW X1 sDrive20i X-Line",
+    2022,
+    167900,
+    0,
+    "img/wr/v7.jpg"
+   ],
+   [
+    "BMW 320i M Sport",
+    2022,
+    223900,
+    0,
+    "img/wr/v8.jpg"
+   ],
+   [
+    "Chevrolet S10 LTZ 2.8 4x4",
+    2025,
+    255900,
+    249900,
+    "img/wr/v9.jpg"
+   ],
+   [
+    "Chevrolet S10 LTZ 2.8 4x4",
+    2023,
+    179900,
+    0,
+    "img/wr/v10.jpg"
+   ],
+   [
+    "Hyundai HB20S Comfort Plus",
+    2025,
+    95900,
+    91900,
+    "img/wr/v11.jpg"
+   ],
+   [
+    "Nissan Altima SL",
+    2014,
+    69900,
+    0,
+    "img/wr/v12.jpg"
+   ],
+   [
+    "CAOA Chery Tiggo 8 Pro",
+    2024,
+    149900,
+    0,
+    "img/wr/v13.jpg"
+   ],
+   [
+    "VW T-Cross Highline",
+    2025,
     139900,
     0,
-    "img/car/c1.jpg"
+    "img/wr/v14.jpg"
    ],
    [
-    "Chevrolet Tracker Premier",
-    2025,
-    134900,
-    0,
-    "img/car/c2.jpg"
-   ],
-   [
-    "Toyota Corolla XEI",
+    "Land Rover Discovery Sport R-Dynamic",
     2023,
-    132900,
-    0,
-    "img/car/c3.jpg"
+    239900,
+    225900,
+    "img/wr/v15.jpg"
    ],
    [
-    "Fiat Fastback Audace CVT",
-    2026,
-    131900,
+    "Mercedes GLC 300 Coupé",
+    2021,
+    319900,
     0,
-    "img/car/c4.jpg"
+    "img/wr/v16.jpg"
    ],
    [
-    "Mercedes C 180 Exclusive",
-    2018,
-    125900,
-    0,
-    "img/car/c5.jpg"
-   ],
-   [
-    "Fiat Strada Ultra CD CVT",
-    2024,
-    124900,
-    0,
-    "img/car/c6.jpg"
-   ],
-   [
-    "VW T-Cross TSI",
-    2024,
+    "Mitsubishi Eclipse Cross HPE",
+    2023,
     118900,
-    0,
-    "img/car/c7.jpg"
-   ],
-   [
-    "Fiat Toro Endurance AT6",
-    2023,
-    119900,
-    0,
-    "img/car/c8.jpg"
-   ],
-   [
-    "Jeep Renegade Longitude AT6",
-    2024,
     116900,
-    0,
-    "img/car/c9.jpg"
+    "img/wr/v17.jpg"
    ],
    [
-    "Chevrolet Spin LTZ",
-    2025,
-    112900,
-    0,
-    "img/car/c10.jpg"
-   ],
-   [
-    "Hyundai Creta Limited",
+    "Toyota Hilux CD 2.8 4x4",
     2022,
+    179900,
+    169900,
+    "img/wr/v18.jpg"
+   ],
+   [
+    "Mercedes GLA 200 Advance",
+    2018,
     109900,
-    0,
-    "img/car/c11.jpg"
+    99900,
+    "img/wr/v19.jpg"
+   ],
+   [
+    "Audi Q5 Sportback S-Line",
+    2022,
+    254900,
+    248900,
+    "img/wr/v20.jpg"
    ],
    [
     "Honda HR-V EX",
-    2019,
-    108900,
-    0,
-    "img/car/c12.jpg"
-   ],
-   [
-    "Renault Duster Iconic Plus",
-    2024,
-    107900,
-    0,
-    "img/car/c13.jpg"
-   ],
-   [
-    "Hyundai HB20S Comfort Plus",
-    2025,
-    106900,
-    0,
-    "img/car/c14.jpg"
-   ],
-   [
-    "VW Polo",
-    2025,
-    106900,
-    0,
-    "img/car/c15.jpg"
-   ],
-   [
-    "Chevrolet Cruze Midnight",
-    2022,
-    104900,
-    0,
-    "img/car/c16.jpg"
-   ],
-   [
-    "Renault Kardian Evolution EDC",
-    2025,
-    104900,
-    0,
-    "img/car/c17.jpg"
-   ],
-   [
-    "VW Golf TSI Highline",
-    2017,
-    104900,
-    0,
-    "img/car/c18.jpg"
-   ],
-   [
-    "Chevrolet Onix Plus LT",
-    2025,
-    99900,
-    0,
-    "img/car/c19.jpg"
-   ],
-   [
-    "Chevrolet Tracker",
-    2023,
-    99900,
-    0,
-    "img/car/c20.jpg"
-   ],
-   [
-    "Citroën C4 Cactus THP Noir",
-    2024,
-    99900,
-    0,
-    "img/car/c21.jpg"
-   ],
-   [
-    "Fiat Cronos Precision CVT",
-    2025,
-    99900,
-    0,
-    "img/car/c22.jpg"
-   ],
-   [
-    "Hyundai HB20 Limited",
-    2026,
-    99900,
-    0,
-    "img/car/c23.jpg"
-   ],
-   [
-    "Fiat Toro Multiair Freedom",
-    2018,
-    89900,
-    0,
-    "img/car/c24.jpg"
-   ],
-   [
-    "Renault Captur Bose",
     2021,
-    89900,
-    0,
-    "img/car/c25.jpg"
+    114900,
+    111900,
+    "img/wr/v21.jpg"
    ],
    [
-    "VW Saveiro Robust CD",
+    "Toyota Hilux SRX 4x4",
+    2026,
+    309900,
+    299900,
+    "img/wr/v22.jpg"
+   ],
+   [
+    "BMW 320i GP",
+    2015,
+    99900,
+    0,
+    "img/wr/v23.jpg"
+   ],
+   [
+    "Ford Ranger XLS 4x4",
+    2016,
+    99900,
+    0,
+    "img/wr/v24.jpg"
+   ],
+   [
+    "Mercedes C 250 Sport",
+    2015,
+    139900,
+    129900,
+    "img/wr/v25.jpg"
+   ],
+   [
+    "BMW 320i M Sport",
     2025,
-    89900,
+    317900,
     0,
-    "img/car/c26.jpg"
+    "img/wr/v26.jpg"
    ],
    [
-    "Fiat Argo Trekking",
+    "Citroën Aircross Shine",
+    2016,
+    57900,
+    0,
+    "img/wr/v27.jpg"
+   ],
+   [
+    "Ford F-150 Platinum V8",
+    2023,
+    349900,
+    339900,
+    "img/wr/v28.jpg"
+   ],
+   [
+    "VW Amarok V6 Extreme",
     2024,
+    229900,
+    0,
+    "img/wr/v29.jpg"
+   ],
+   [
+    "BMW 320i",
+    2017,
+    115900,
+    112900,
+    "img/wr/v30.jpg"
+   ],
+   [
+    "Toyota Hilux SRX 4x4",
+    2023,
+    249900,
+    246900,
+    "img/wr/v31.jpg"
+   ],
+   [
+    "Nissan Frontier Platinum",
+    2024,
+    209900,
+    199900,
+    "img/wr/v32.jpg"
+   ],
+   [
+    "Chevrolet Tracker Premier",
+    2018,
     87900,
     0,
-    "img/car/c27.jpg"
+    "img/wr/v33.jpg"
    ],
    [
-    "Renault Logan Zen",
-    2025,
-    84900,
-    0,
-    "img/car/c28.jpg"
+    "BMW X1 sDrive20i",
+    2018,
+    121900,
+    115900,
+    "img/wr/v34.jpg"
    ],
    [
-    "Honda Civic LXR",
-    2014,
-    81900,
-    0,
-    "img/car/c29.jpg"
-   ],
-   [
-    "Fiat Cronos Drive",
-    2024,
-    79900,
-    0,
-    "img/car/c30.jpg"
-   ],
-   [
-    "Hyundai HB20S Comfort Plus",
-    2024,
-    79900,
-    0,
-    "img/car/c31.jpg"
-   ],
-   [
-    "Mitsubishi ASX",
-    2015,
-    77900,
-    0,
-    "img/car/c32.jpg"
-   ],
-   [
-    "VW Virtus TSI Comfortline",
-    2019,
-    77900,
-    0,
-    "img/car/c33.jpg"
-   ],
-   [
-    "VW Polo Track",
-    2024,
-    75900,
-    0,
-    "img/car/c34.jpg"
-   ],
-   [
-    "Chevrolet Prisma LTZ",
-    2019,
-    72900,
-    0,
-    "img/car/c35.jpg"
-   ],
-   [
-    "Hyundai HB20 Sense",
-    2024,
-    72900,
-    0,
-    "img/car/c36.jpg"
-   ],
-   [
-    "Jeep Renegade Longitude",
-    2016,
-    71900,
-    0,
-    "img/car/c37.jpg"
-   ],
-   [
-    "Toyota Etios X Plus Sedan",
+    "Hyundai HB20S Comfort Style",
     2019,
     69900,
     0,
-    "img/car/c38.jpg"
+    "img/wr/v35.jpg"
    ],
    [
-    "Fiat Mobi",
-    2025,
-    66900,
-    0,
-    "img/car/c39.jpg"
-   ],
-   [
-    "VW Voyage",
+    "Ford Ranger Limited 3.2 4x4",
     2023,
-    66900,
-    0,
-    "img/car/c40.jpg"
+    189900,
+    179900,
+    "img/wr/v36.jpg"
    ],
    [
-    "Mitsubishi Pajero TR4",
-    2013,
-    64900,
-    0,
-    "img/car/c41.jpg"
+    "Land Rover Discovery Sport S",
+    2022,
+    229900,
+    209900,
+    "img/wr/v37.jpg"
    ],
    [
-    "VW Saveiro Cross CE",
+    "Jeep Compass Trailhawk Diesel",
+    2022,
+    139900,
+    124900,
+    "img/wr/v38.jpg"
+   ],
+   [
+    "Chevrolet S10 LTZ",
+    2025,
+    255900,
+    249900,
+    "img/wr/v39.jpg"
+   ],
+   [
+    "Jeep Compass Limited",
+    2021,
+    116900,
+    109900,
+    "img/wr/v40.jpg"
+   ],
+   [
+    "VW Amarok V6 Highline Extreme",
+    2023,
+    214900,
+    209900,
+    "img/wr/v41.jpg"
+   ],
+   [
+    "Mercedes GLA 200 Enduro",
+    2018,
+    125900,
+    113900,
+    "img/wr/v42.jpg"
+   ],
+   [
+    "VW Amarok V6 Highline",
+    2018,
+    144900,
+    139900,
+    "img/wr/v43.jpg"
+   ],
+   [
+    "VW Saveiro Cross",
     2014,
-    64900,
-    0,
-    "img/car/c42.jpg"
-   ],
-   [
-    "Fiat Strada Adventure CD",
-    2013,
-    63900,
-    0,
-    "img/car/c43.jpg"
-   ],
-   [
-    "Citroën Aircross Live EAT6",
-    2019,
-    62900,
-    0,
-    "img/car/c44.jpg"
-   ],
-   [
-    "Peugeot 208 Allure",
-    2017,
-    62900,
-    0,
-    "img/car/c45.jpg"
-   ],
-   [
-    "Fiat Mobi Trekking",
-    2024,
-    61900,
-    0,
-    "img/car/c46.jpg"
-   ],
-   [
-    "Renault Kwid Outsider",
-    2025,
-    61900,
-    0,
-    "img/car/c47.jpg"
-   ],
-   [
-    "VW Gol",
-    2023,
     59900,
     0,
-    "img/car/c48.jpg"
+    "img/wr/v44.jpg"
    ],
    [
-    "VW Up TSI Move Up",
-    2016,
-    59900,
-    0,
-    "img/car/c49.jpg"
+    "Toyota Corolla Altis Hybrid",
+    2022,
+    134900,
+    124900,
+    "img/wr/v45.jpg"
    ],
    [
-    "Mini Cooper One",
-    2012,
-    58900,
-    0,
-    "img/car/c50.jpg"
-   ],
-   [
-    "Renault Kwid Zen",
-    2024,
-    58900,
-    0,
-    "img/car/c51.jpg"
-   ],
-   [
-    "Chevrolet Onix Joy",
-    2020,
-    57900,
-    0,
-    "img/car/c52.jpg"
-   ],
-   [
-    "Ford Ecosport Titanium",
-    2014,
-    57900,
-    0,
-    "img/car/c53.jpg"
-   ],
-   [
-    "Renault Duster Dynamique",
-    2013,
-    58900,
-    0,
-    "img/car/c54.jpg"
-   ],
-   [
-    "Fiat Argo Drive",
-    2019,
-    54900,
-    0,
-    "img/car/c55.jpg"
-   ],
-   [
-    "Nissan March Rio",
-    2016,
-    53900,
-    0,
-    "img/car/c56.jpg"
-   ],
-   [
-    "Kia Picanto EX",
-    2016,
-    51900,
-    0,
-    "img/car/c57.jpg"
-   ],
-   [
-    "Toyota Fielder XEI",
-    2008,
-    49900,
-    0,
-    "img/car/c58.jpg"
+    "BMW X5 xDrive45e M Sport",
+    2022,
+    378900,
+    369900,
+    "img/wr/v46.jpg"
    ]
   ],
   "I": [
