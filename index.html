@@ -154,6 +154,12 @@ a{color:inherit}
 .ficha{border-top:1px dashed var(--line);padding-top:10px;font-size:13px;color:var(--ink-2);display:grid;gap:4px}
 .ficha b{color:var(--ink);font-variant-numeric:tabular-nums}
 .more{display:flex;justify-content:center;margin-top:26px}
+.grp{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:26px 0 2px;padding:14px 18px;border-radius:16px;background:var(--hero-bg);color:var(--hero-fg)}
+.grp:first-child{margin-top:4px}
+.grp h3{margin:0;font-family:var(--display);font-weight:900;font-size:24px;line-height:1.1}
+.grp span{font-size:14px;color:var(--hero-mute)}
+.grp svg{width:44px;height:auto;flex:none}
+.grp-more{grid-column:1/-1;display:flex;justify-content:center;margin-top:4px}
 .empty{grid-column:1/-1;text-align:center;padding:40px;border:1.5px dashed var(--line);border-radius:16px;color:var(--ink-2)}
 
 /* ecossistema */
@@ -360,10 +366,10 @@ footer p{max-width:90ch}
 <div class="deal-mini" id="oferta-imovel"></div>
     <div class="filters" role="group" aria-label="Filtrar cartas">
       <div class="seg" id="f-tipo">
-        <button type="button" data-v="all" aria-pressed="true">Todas</button>
-        <button type="button" data-v="I" aria-pressed="false">Imóvel</button>
-        <button type="button" data-v="A" aria-pressed="false">Auto</button>
-        <button type="button" data-v="C" aria-pressed="false">Caminhão</button>
+        <button type="button" data-v="all" aria-pressed="true">Carros e imóveis</button>
+        <button type="button" data-v="A" aria-pressed="false">Só carros</button>
+        <button type="button" data-v="I" aria-pressed="false">Só imóveis</button>
+        <button type="button" data-v="C" aria-pressed="false">Caminhões</button>
       </div>
       <select class="sel" id="f-faixa" aria-label="Faixa de crédito">
         <option value="all">Qualquer crédito</option>
@@ -389,7 +395,7 @@ footer p{max-width:90ch}
     </div>
     <div class="grid" id="grid"></div>
     <div class="more"><button class="btn btn-ghost" id="more" type="button">Mostrar mais cartas</button></div>
-    <p class="note" style="margin-top:18px"><strong>Não olhe só para a parcela.</strong> Abra a ficha e compare crédito, entrada e saldo devedor. Mostramos uma seleção das cartas de menor entrada em cada faixa. Temos mais de 4 mil cartas na base: se não achou a sua, <a href="#" class="js-wa" data-msg="Olá! Não achei na vitrine a carta que procuro. Busco: ">diga o que procura</a> que buscamos para você.</p>
+    <p class="note" style="margin-top:18px"><strong>Não olhe só para a parcela.</strong> Abra a ficha e compare crédito, entrada e saldo devedor. Mostramos uma seleção das cartas de menor entrada em cada faixa. Temos mais de 3 mil cartas na base: se não achou a sua, <a href="#" class="js-wa" data-msg="Olá! Não achei na vitrine a carta que procuro. Busco: ">diga o que procura</a> que buscamos para você.</p>
   </div>
 </section>
 <section>
@@ -439,7 +445,7 @@ footer p{max-width:90ch}
         <label for="inv-m">Se a contemplação sair no mês <output id="inv-mo">20</output></label>
         <input type="range" id="inv-m" min="3" max="60" step="1" value="20">
         <div class="inv-big"><span>Você terá investido</span><output id="inv-tot">R$ 7.900</output></div>
-        <p class="inv-ref">Referência de mercado hoje: na nossa vitrine, cartas de imóvel já contempladas de R$ 94 mil a R$ 166 mil são negociadas com entrada de R$ 36 mil a R$ 60 mil. A entrada inclui o que o titular já pagou.</p>
+        <p class="inv-ref">Referência de mercado hoje: na nossa vitrine, cartas de imóvel já contempladas de R$ 87 mil a R$ 153 mil são negociadas com entrada de R$ 30 mil a R$ 56 mil. A entrada inclui o que o titular já pagou.</p>
         <a class="btn btn-gold js-wa" data-msg="Olá! Sou investidor e quero a simulação da carta imobiliária de R$ 150 mil com parcela reduzida.">Quero a simulação de investidor</a>
         <p class="inv-note">Exemplo, não promessa de retorno. A contemplação ocorre por sorteio ou lance, sem data garantida, e o valor de venda da carta depende do mercado. Há taxa de administração e demais custos do contrato. Confirme as condições do grupo com o consultor.</p>
       </div>
@@ -586,7 +592,7 @@ function assign(list){
   return list.map(c=>{
     const t=c[1], S=STOCK[t]; if(!S) return null; const cr=c[3];
     const fit=S.map((x,k)=>({x,k,v:sp(t,x)})).filter(o=>o.v<=cr).sort((a,b)=>b.v-a.v);
-    let o=fit.find(o=>!used.has(t+o.k))||fit[0], comp=0;
+    let o=fit.find(o=>!used.has(t+o.k)), comp=0;
     if(!o){ const up=S.map((x,k)=>({x,k,v:sp(t,x)})).sort((a,b)=>a.v-b.v); o=up.find(o=>!used.has(t+o.k))||up[0]; comp=o.v-cr; }
     used.add(t+o.k); return {t,x:o.x,v:o.v,comp};
   });
@@ -594,7 +600,7 @@ function assign(list){
 const MODE = (()=>{try{const h=location.hash.replace("#","");return ["auto","imovel","investidor"].includes(h)?h:"";}catch(e){return "";}})();
 const REF = MODE ? "LP-ANUNCIO-"+MODE.toUpperCase() : "LP-SITE";
 
-/* Cartas: [id, tipo, administradora, crédito, entrada, %entrada, saldo devedor, parcela "qtd x valor"] — Consort, 16/10/2026 */
+/* Cartas: [id, tipo, administradora, crédito, entrada, %entrada, saldo devedor, parcela "qtd x valor"] — Consort, 19/10/2026 */
 
 
 const TIPO = {I:"Imóvel",A:"Auto",C:"Caminhão"};
@@ -647,10 +653,30 @@ function card(c,m){
     </div>
   </article>`;
 }
+const GROUPS=[{k:"A",tipos:["A","C"],h:"Cartas para carro",sub:"Cartas de auto e caminhão, com o carro do pátio WR Veículos que cabe em cada uma"},{k:"I",tipos:["I"],h:"Cartas para imóvel",sub:"Cartas de imóvel, com o imóvel da WR Imóveis que cabe em cada uma"}];
+const gShown={A:8,I:8};
+const emptyMsg=`<div class="empty">Nenhuma carta da vitrine nessa combinação. <a href="${waUrl("Olá! Procuro uma carta contemplada e não achei na vitrine. Busco: ")}" target="_blank" rel="noopener">Peça uma busca na base completa</a>.</div>`;
+const cards=l=>{const ms=assign(l); return l.map((c,i)=>card(c,ms[i])).join("");};
 function render(){
   const l = filtered();
-  grid.innerHTML = l.length ? (()=>{const sl=l.slice(0,state.shown), ms=assign(sl); return sl.map((c,i)=>card(c,ms[i])).join("");})() : `<div class="empty">Nenhuma carta da vitrine nessa combinação. <a href="${waUrl("Olá! Procuro uma carta contemplada e não achei na vitrine. Busco: ")}" target="_blank" rel="noopener">Peça uma busca na base completa</a>.</div>`;
-  document.getElementById("count").textContent = `${Math.min(state.shown,l.length)} de ${l.length} cartas · ordenadas por ${document.querySelector("#f-ord option:checked").textContent.toLowerCase()}`;
+  const ordTxt = document.querySelector("#f-ord option:checked").textContent.toLowerCase();
+  if(state.tipo==="all"){
+    const order = MODE==="imovel" ? GROUPS.slice().reverse() : GROUPS;
+    let html="", tot=0;
+    order.forEach(g=>{
+      const gl=l.filter(c=>g.tipos.includes(c[1])); tot+=gl.length; if(!gl.length) return;
+      const n=gShown[g.k];
+      html+=`<div class="grp" id="grp-${g.k}">${ART[g.k]}<div><h3>${g.h} <small style="font-weight:600;font-size:15px;opacity:.75">(${gl.length})</small></h3><span>${g.sub}</span></div></div>`;
+      html+=cards(gl.slice(0,n));
+      if(gl.length>n) html+=`<div class="grp-more"><button class="btn btn-ghost js-gmore" type="button" data-g="${g.k}">Mais cartas para ${g.k==="A"?"carro":"imóvel"}</button></div>`;
+    });
+    grid.innerHTML = html || emptyMsg;
+    document.getElementById("count").textContent = `${tot} cartas · carros e imóveis separados · ordenadas por ${ordTxt}`;
+    document.getElementById("more").hidden = true;
+    return;
+  }
+  grid.innerHTML = l.length ? cards(l.slice(0,state.shown)) : emptyMsg;
+  document.getElementById("count").textContent = `${Math.min(state.shown,l.length)} de ${l.length} cartas · ordenadas por ${ordTxt}`;
   document.getElementById("more").hidden = l.length <= state.shown;
 }
 function setTipo(v){
@@ -659,12 +685,13 @@ function setTipo(v){
   render();
 }
 document.getElementById("f-tipo").addEventListener("click",e=>{const b=e.target.closest("button"); if(b) setTipo(b.dataset.v);});
-document.getElementById("f-faixa").addEventListener("change",e=>{state.faixa=e.target.value; state.shown=12; render();});
-document.getElementById("f-ent").addEventListener("change",e=>{state.ent=+e.target.value; state.shown=12; render();});
+document.getElementById("f-faixa").addEventListener("change",e=>{state.faixa=e.target.value; state.shown=12; gShown.A=gShown.I=8; render();});
+document.getElementById("f-ent").addEventListener("change",e=>{state.ent=+e.target.value; state.shown=12; gShown.A=gShown.I=8; render();});
 document.getElementById("f-ord").addEventListener("change",e=>{state.ord=e.target.value; render();});
 document.getElementById("more").addEventListener("click",()=>{state.shown+=12; render();});
+grid.addEventListener("click",e=>{const g=e.target.closest(".js-gmore"); if(g){gShown[g.dataset.g]+=8; render(); return;}});
 grid.addEventListener("click",e=>{const b=e.target.closest(".js-ficha"); if(!b) return; const f=b.closest(".c-body").querySelector(".ficha"); f.hidden=!f.hidden; b.setAttribute("aria-expanded",String(!f.hidden)); b.textContent=f.hidden?"Ficha":"Fechar";});
-document.querySelectorAll("[data-ent]").forEach(a=>a.addEventListener("click",()=>{state.ent=+a.dataset.ent; document.getElementById("f-ent").value=a.dataset.ent; state.shown=12; render();}));
+document.querySelectorAll("[data-ent]").forEach(a=>a.addEventListener("click",()=>{state.ent=+a.dataset.ent; document.getElementById("f-ent").value=a.dataset.ent; state.shown=12; gShown.A=gShown.I=8; render();}));
 document.querySelectorAll("[data-jump]").forEach(a=>a.addEventListener("click",()=>setTipo(a.dataset.jump)));
 
 /* WhatsApp genérico */
@@ -699,7 +726,7 @@ function qResult(){
   qz.innerHTML=`<div class="q-res">
     <div class="t-lab">Resultado</div>
     <div class="q-q">${m.length?`${m.length} ${m.length>1?"cartas combinam":"carta combina"} com você`:"Nenhuma carta da vitrine bate exatamente"}</div>
-    <div>${m.length?`A de menor entrada: <b>${m[0][0]}</b>, ${m[0][2]}, crédito ${brl(m[0][3])} com entrada de ${brl(m[0][4])}.`:"Temos mais de 4 mil cartas na base completa. Um consultor busca a sua."}</div>
+    <div>${m.length?`A de menor entrada: <b>${m[0][0]}</b>, ${m[0][2]}, crédito ${brl(m[0][3])} com entrada de ${brl(m[0][4])}.`:"Temos mais de 3 mil cartas na base completa. Um consultor busca a sua."}</div>
     <div class="cta-row">
       <a class="btn btn-wa" href="${waUrl(msg)}" target="_blank" rel="noopener">Falar com um consultor</a>
       ${m.length?`<a class="btn btn-ghost" href="#vitrine" id="q-see">Ver na vitrine</a>`:""}
