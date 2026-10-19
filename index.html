@@ -656,6 +656,15 @@ function card(c,m){
 const GROUPS=[{k:"A",tipos:["A","C"],h:"Cartas para carro",sub:"Cartas de auto e caminhão, com o carro do pátio WR Veículos que cabe em cada uma"},{k:"I",tipos:["I"],h:"Cartas para imóvel",sub:"Cartas de imóvel, com o imóvel da WR Imóveis que cabe em cada uma"}];
 const gShown={A:8,I:8};
 const emptyMsg=`<div class="empty">Nenhuma carta da vitrine nessa combinação. <a href="${waUrl("Olá! Procuro uma carta contemplada e não achei na vitrine. Busco: ")}" target="_blank" rel="noopener">Peça uma busca na base completa</a>.</div>`;
+/* carros: 1ª fileira = menores entradas; 2ª fileira = cartas maiores, com os carros mais caros do pátio */
+function arrangeCars(l){
+  if(state.ord!=="pe"||state.faixa!=="all") return l;
+  const cheap=l.filter(c=>c[3]<150000).slice(0,4);
+  const prem=l.filter(c=>c[1]==="A"&&c[3]>=170000&&!cheap.includes(c)).sort((x,y)=>y[3]-x[3]).slice(0,4);
+  if(prem.length<4) return l;
+  const head=[...cheap,...prem];
+  return head.concat(l.filter(c=>!head.includes(c)));
+}
 const cards=l=>{const ms=assign(l); return l.map((c,i)=>card(c,ms[i])).join("");};
 function render(){
   const l = filtered();
@@ -664,7 +673,7 @@ function render(){
     const order = MODE==="imovel" ? GROUPS.slice().reverse() : GROUPS;
     let html="", tot=0;
     order.forEach(g=>{
-      const gl=l.filter(c=>g.tipos.includes(c[1])); tot+=gl.length; if(!gl.length) return;
+      let gl=l.filter(c=>g.tipos.includes(c[1])); if(g.k==="A") gl=arrangeCars(gl); tot+=gl.length; if(!gl.length) return;
       const n=gShown[g.k];
       html+=`<div class="grp" id="grp-${g.k}">${ART[g.k]}<div><h3>${g.h} <small style="font-weight:600;font-size:15px;opacity:.75">(${gl.length})</small></h3><span>${g.sub}</span></div></div>`;
       html+=cards(gl.slice(0,n));
@@ -675,7 +684,8 @@ function render(){
     document.getElementById("more").hidden = true;
     return;
   }
-  grid.innerHTML = l.length ? cards(l.slice(0,state.shown)) : emptyMsg;
+  const ll = state.tipo==="A" ? arrangeCars(l) : l;
+  grid.innerHTML = ll.length ? cards(ll.slice(0,state.shown)) : emptyMsg;
   document.getElementById("count").textContent = `${Math.min(state.shown,l.length)} de ${l.length} cartas · ordenadas por ${ordTxt}`;
   document.getElementById("more").hidden = l.length <= state.shown;
 }
