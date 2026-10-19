@@ -6,7 +6,7 @@
 <meta name="description" content="Cartas de consórcio já contempladas de imóvel e veículo, com o carro ou imóvel que cabe em cada carta no estoque do Grupo WR, em Londrina.">
 <meta property="og:title" content="WR Consórcios · Cartas contempladas">
 <meta property="og:description" content="Você não precisa esperar o sorteio. A carta já saiu. Veja as cartas disponíveis e o carro que cabe em cada uma.">
-<meta property="og:image" content="/img/st/compass_hd.jpg">
+<meta property="og:image" content="/img/car/oferta.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="/img/logo.png">
 <!-- ===== PIXEL DA META: troque SEU_PIXEL_ID e descomente =====
@@ -131,7 +131,7 @@ a{color:inherit}
 .sel{appearance:none;padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 16px) 55%,calc(100% - 11px) 55%;background-size:5px 5px;background-repeat:no-repeat}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
 .carta{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.c-photo{aspect-ratio:16/8;position:relative;display:flex;align-items:flex-end;padding:12px 14px;color:#fff;max-width:100%}
+.c-photo{aspect-ratio:16/8.9;position:relative;display:flex;align-items:flex-end;padding:12px 14px;color:#fff;max-width:100%}
 .c-photo.I{background:linear-gradient(160deg,#2b4a5c,#0e2230)}
 .c-photo.A{background:linear-gradient(160deg,#5a3f1c,#22180b)}
 .c-photo.C{background:linear-gradient(160deg,#3c4a3a,#141c14)}
@@ -184,7 +184,7 @@ a{color:inherit}
 /* oferta do dia */
 .deal{display:grid;grid-template-columns:1.25fr 1fr;align-items:stretch;gap:0;margin-top:26px;background:var(--card);border:2px solid #2350d8;border-radius:22px;overflow:hidden;box-shadow:0 24px 50px -30px rgba(35,80,216,.6)}
 .deal-photo{position:relative;background:#0b1424;display:flex;align-items:center;overflow:hidden}
-.deal-photo::before{content:"";position:absolute;inset:-30px;background:url("img/st/compass_hd.jpg") center/cover;filter:blur(22px) brightness(.55);transform:scale(1.1)}
+.deal-photo::before{content:"";position:absolute;inset:-30px;background:url("img/car/oferta.jpg") center/cover;filter:blur(22px) brightness(.55);transform:scale(1.1)}
 .deal-photo img{position:relative;display:block;width:100%;height:auto;aspect-ratio:900/551;object-fit:cover;box-shadow:0 20px 40px -20px rgba(0,0,0,.7)}
 .deal-photo .badge,.deal-photo .ilus{z-index:2}
 .deal-photo .badge{position:absolute;top:14px;left:14px;background:#e23c2e;color:#fff;font-weight:800;font-size:13px;padding:6px 12px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
@@ -297,7 +297,7 @@ footer p{max-width:90ch}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 /* cartas compactas */
 .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.c-photo{aspect-ratio:16/7.5}
+.c-photo{aspect-ratio:16/8.9}
 .c-photo .badge{font-size:11px;padding:3px 8px;top:10px;left:10px}
 .c-photo .tipo{font-size:10px;padding:3px 6px}
 .c-photo .ilus{font-size:10px;padding:2px 6px;bottom:10px;right:8px}
@@ -310,7 +310,7 @@ footer p{max-width:90ch}
 .c-act{gap:6px}.c-act .btn{padding:9px 12px;font-size:13px}
 @media (max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.grid{grid-template-columns:1fr}.c-photo{aspect-ratio:16/6.5}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.c-photo{aspect-ratio:16/8.9}}
 </style>
 <style>body{margin:0}img{max-width:100%}</style>
 </head>
@@ -660,7 +660,9 @@ const emptyMsg=`<div class="empty">Nenhuma carta da vitrine nessa combinação. 
 function arrangeCars(l){
   if(state.ord!=="pe"||state.faixa!=="all") return l;
   const cheap=l.filter(c=>c[3]<150000).slice(0,4);
-  const prem=l.filter(c=>c[1]==="A"&&c[3]>=170000&&!cheap.includes(c)).sort((x,y)=>y[3]-x[3]).slice(0,4);
+  const top=STOCK.A.slice().sort((a,b)=>sp("A",b)-sp("A",a)).slice(0,4), prem=[];
+  for(const x of top){ const p=sp("A",x); const c=l.filter(c=>c[1]==="A"&&c[3]>=p&&c[3]<=p*1.6&&!cheap.includes(c)&&!prem.includes(c)).sort((a,b)=>a[5]-b[5]||a[3]-b[3])[0]; if(c) prem.push(c); }
+  prem.sort((x,y)=>y[3]-x[3]);
   if(prem.length<4) return l;
   const head=[...cheap,...prem];
   return head.concat(l.filter(c=>!head.includes(c)));
